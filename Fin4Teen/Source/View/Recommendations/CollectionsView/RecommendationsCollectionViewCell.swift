@@ -64,8 +64,8 @@ final class RecommendationsCollectionViewCell: UICollectionViewCell, ViewCodeCon
             .heightAnchor(130)
     }
     
-    public func setupCell(image: UIImage? = nil, topFive: UIImage? = nil) {
-        imageView.image = image
+    public func setupCell(image: String, topFive: UIImage? = nil) {
+        imageView.load(urlString: image)
         topFiveImage.image = topFive
     }
     

@@ -9,6 +9,12 @@ import UIKit
 
 final class topFiveCollectionView: UIView, ViewCodeContract {
     
+    var movieList: [Movie] = [] {
+        didSet {
+            self.collectionView?.reloadData()
+        }
+    }
+    
     // MARK: - Init
     
     override init(frame: CGRect) {
@@ -24,8 +30,6 @@ final class topFiveCollectionView: UIView, ViewCodeContract {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    private var tableViewContents = UITableView()
     
     // MARK: - Viewcode
     
@@ -108,31 +112,25 @@ extension topFiveCollectionView: UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return movieList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecommendationsCollectionViewCell.identifier, for: indexPath) as? RecommendationsCollectionViewCell else { return UICollectionViewCell() }
+        let movies = movieList
+        
         let imagesTop = [UIImage(named: Image.one.rawValue),
                          UIImage(named: Image.two.rawValue),
                          UIImage(named: Image.three.rawValue),
                          UIImage(named: Image.four.rawValue),
                          UIImage(named: Image.five.rawValue)]
         
-        let posterMovies = [UIImage(named: Image.oLoboWallStreet.rawValue),
-                            UIImage(named: Image.grandeAposta.rawValue),
-                            UIImage(named: Image.fomePoder.rawValue),
-                            UIImage(named: Image.warrenBuffet.rawValue),
-                            UIImage(named: Image.madoff.rawValue)]
-        
-        cell.setupCell(image: posterMovies[indexPath.row], topFive: imagesTop[indexPath.row])
-        
-        
+        cell.setupCell(image: movies[indexPath.row].url_poster, topFive: imagesTop[indexPath.row])
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("tapped top five")
     }
-    
+
 }

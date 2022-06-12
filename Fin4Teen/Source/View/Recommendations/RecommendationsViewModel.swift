@@ -43,6 +43,7 @@ final class RecommendationsViewModel: RecommendationsViewModelOutputProtocol {
     private func fetchMovies() {
         service.fetchMovies { result in
             DispatchQueue.main.async {
+                print(result)
                 self.movies.value = result
             }
         }

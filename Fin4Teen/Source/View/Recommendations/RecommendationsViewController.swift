@@ -15,7 +15,6 @@ final class RecommendationsViewController: UIViewController, FTNCoordinatedViewC
     
     var coordinator: FTNCoordinator?
     
-    
     // MARK: - Private properties
     private let service: FTNServiceProtocol = FTNService()
     private var viewModel: RecommendationsViewModelProtocol?
@@ -49,18 +48,13 @@ final class RecommendationsViewController: UIViewController, FTNCoordinatedViewC
 
     private func bindProperties() {
         viewModel?.output.movies.bind(skip: true) { result in
-//            self.customView = result
-           print("AQUI movies: ", result)
+            self.customView.bindMovies(value: result)
         }
         
         viewModel?.output.books.bind(skip: true) { result in
-//            self.customView = result
-           print("AQUI books: ", result)
         }
         
         viewModel?.output.tvshows.bind(skip: true) { result in
-//            self.customView = result
-           print("AQUI tvshows: ", result)
         }
     }
     

@@ -17,6 +17,11 @@ struct Movie: Codable {
     let id: Int?
     let title: String?
     let description: String?
+    let release: String?
+    let url_poster: String
+    let url_netflix: String?
+    let url_amazon: String?
+    let url_appletv: String?
 }
 
 // MARK: - Books

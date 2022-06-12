@@ -89,7 +89,11 @@ class RecommendationsView: UIView, ViewCodeContract {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    
+
+    func bindMovies(value: [Movie]) {
+        topFiveHeaderView.movieList = value
+    }
+
     // MARK: - Setup viewcode
     
     func setupHierarchy() {
