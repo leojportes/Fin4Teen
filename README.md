@@ -44,7 +44,6 @@ Necessário ter [Xcode](https://developer.apple.com/xcode/) instalado.
 
 ## Dependências
 <b>Firebase/Auth<br>
-<b>CoreFramework<br>
  
 Projeto gerado com Xcode version 12.5.
  
