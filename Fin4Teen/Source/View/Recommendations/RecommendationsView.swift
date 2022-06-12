@@ -53,7 +53,6 @@ class RecommendationsView: UIView, ViewCodeContract {
         return view
     }()
   
-    
     private lazy var topFiveHeaderView: topFiveCollectionView = {
         let view = topFiveCollectionView()
         view.translatesAutoresizingMaskIntoConstraints = false

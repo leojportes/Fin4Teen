@@ -30,11 +30,10 @@ final class ServiceNews: ServiceNewsProtocol {
                          errorNetwork: @escaping (NetworkError) -> Void) {
         let baseUrl = "https://newsapi.org/v2/"
         if let url = URL(string: "\(baseUrl)top-headlines?country=br&category=\(category)&apiKey=64f7fecd9b4c43c382ccc864b7af0401") {
-            
             let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
                 
                 if let error = error {
-                    print("error: \(error.localizedDescription)")
+                    print("error: \(error)")
                     return
                 }
                 
@@ -45,8 +44,7 @@ final class ServiceNews: ServiceNewsProtocol {
                         
                     } catch let error {
                         errorNetwork(.jsonInvalid)
-                        print(error.localizedDescription)
-                        
+                        print(error)
                     }
                 }
             }

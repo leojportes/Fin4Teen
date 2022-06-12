@@ -114,7 +114,7 @@ class MainCoordinator: FTNCoordinator {
     }
     
     private func navigateToRecommandationsScreen() {
-        var controller: UIViewController & FTNCoordinatedViewController = RecommendationsViewController()
+        var controller: UIViewController & FTNCoordinatedViewController = RecommendationsViewController.instantiate()
         controller.coordinator = self
         navigationController?.pushViewController(controller, animated: true)
     }
