@@ -45,7 +45,7 @@ Necessário ter [Xcode](https://developer.apple.com/xcode/) instalado.
 ## Dependências
 <b>Firebase/Auth<br>
  
-Projeto gerado com Xcode version 12.5.
+Projeto gerado com Xcode version 13.4.
  
 ## Componentes disponíveis: 
 - **[TeenButton](#teenbutton)**<br>
