@@ -25,7 +25,7 @@ class MainCoordinator: FTNCoordinator {
     
     func eventOccurred(with type: Event) {
         
-            switch type {
+        switch type {
         case .showHome:
             self.navigateToHomeScreen()
         case .showMenuScreen:
@@ -58,20 +58,22 @@ class MainCoordinator: FTNCoordinator {
             self.navigateToRecommandationsScreen()
         case .backAction:
             self.backAction()
-            case .investments:
-                self.navigateToInvestiments()
-            case .financialMarket:
-                self.navigateToFinancialMarket()
-            case .aboutMoney:
-                self.navigateToAboutMoney()
-            case .criptoCoins:
-                self.navigateToCriptoCoins()
-            case .stockExchange:
-                self.navigateToStockExchange()
-            case .curiosities:
-                self.navigateToCuriosities()
-            }
-
+        case .investments:
+            self.navigateToInvestiments()
+        case .financialMarket:
+            self.navigateToFinancialMarket()
+        case .aboutMoney:
+            self.navigateToAboutMoney()
+        case .criptoCoins:
+            self.navigateToCriptoCoins()
+        case .stockExchange:
+            self.navigateToStockExchange()
+        case .curiosities:
+            self.navigateToCuriosities()
+        case .showRecommendationDetail(let indexPath):
+            self.showRecommendationDetail(indexPath: indexPath)
+        }
+        
     }
     
     // MARK: - Private Methods
@@ -162,7 +164,7 @@ class MainCoordinator: FTNCoordinator {
     }
     
     private func closeAction() {
-        navigationController?.popViewController(animated: false)
+        navigationController?.popViewController(animated: true)
     }
     
     private func navigateToInvestiments() {
@@ -199,6 +201,12 @@ class MainCoordinator: FTNCoordinator {
         var controller: UIViewController & FTNCoordinatedViewController = CuriositiesViewController()
         controller.coordinator = self
         navigationController?.pushViewController(controller, animated: true)
+    }
+
+    private func showRecommendationDetail(indexPath: IndexPath) {
+        var controller: UIViewController & FTNCoordinatedViewController = RecommendationsDetailViewController.instantiate(indexPath: indexPath)
+        controller.coordinator = self
+        navigationController?.present(controller, animated: true)
     }
     
 }

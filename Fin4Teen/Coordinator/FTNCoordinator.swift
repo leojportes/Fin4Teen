@@ -48,6 +48,10 @@ enum Event {
     case criptoCoins
     case stockExchange
     case curiosities
+    
+    // MARK: - Recommendations
+    
+    case showRecommendationDetail(selectedIndex: IndexPath)
 }
 
 protocol FTNCoordinator {

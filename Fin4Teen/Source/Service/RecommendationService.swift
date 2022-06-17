@@ -16,12 +16,14 @@ protocol FTNServiceProtocol {
 final class FTNService: FTNServiceProtocol {
     
     func fetchMovies(completion: @escaping ([Movie]) -> Void) {
-        guard let url = URL(string: "https://leojportes.github.io/Recommendation/movie.json") else { return }
+        guard let url = URL(string: StringConstants.Api.movies) else { return }
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let data = data else { return }
             do {
                 let postsData = try JSONDecoder().decode(Movies.self, from: data)
-                completion(postsData.movies)
+                DispatchQueue.main.async {
+                    completion(postsData.movies)
+                }
             }
             catch {
                 let error = error
@@ -31,7 +33,7 @@ final class FTNService: FTNServiceProtocol {
     }
 
     func fetchBooks(completion: @escaping ([Book]) -> Void) {
-        guard let url = URL(string: "https://leojportes.github.io/Recommendation/book.json") else { return }
+        guard let url = URL(string: StringConstants.Api.books) else { return }
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let data = data else { return }
             do {
@@ -46,7 +48,7 @@ final class FTNService: FTNServiceProtocol {
     }
     
     func fetchTvshows(completion: @escaping ([Tvshow]) -> Void) {
-        guard let url = URL(string: "https://leojportes.github.io/Recommendation/tvshow.json") else { return }
+        guard let url = URL(string: StringConstants.Api.tvshow) else { return }
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let data = data else { return }
             do {

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SkeletonView
 
 class HomeViewController: UIViewController, FTNCoordinatedViewController {
     
@@ -34,9 +35,11 @@ class HomeViewController: UIViewController, FTNCoordinatedViewController {
         setupView()
         bindProperties()
         viewModel?.input.viewDidLoad()
+        customView.didPullRefresh = pullRefresh
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.navigationController?.navigationBar.isHidden = true
     }
     
@@ -68,6 +71,15 @@ class HomeViewController: UIViewController, FTNCoordinatedViewController {
         viewModel?.output.news.bind(skip: true) { result in
             self.customView.newsList = result
             
+        }
+    }
+
+    private func pullRefresh() {
+        bindProperties()
+        viewModel?.input.viewDidLoad()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+            self.customView.tableview.refreshControl?.endRefreshing()
+            self.customView.tableview.reloadData()
         }
     }
     

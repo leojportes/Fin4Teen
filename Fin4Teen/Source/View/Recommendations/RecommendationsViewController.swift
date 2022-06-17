@@ -12,7 +12,6 @@ final class RecommendationsViewController: UIViewController, FTNCoordinatedViewC
     private let customView = RecommendationsView()
     
     // MARK: - Internal properties
-    
     var coordinator: FTNCoordinator?
     
     // MARK: - Private properties
@@ -27,14 +26,24 @@ final class RecommendationsViewController: UIViewController, FTNCoordinatedViewC
     }
     
     // MARK: Lifecycle
-
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view = customView
+       
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         setupCustomView()
-        bindProperties()
+        customView.topFiveHeaderView.collectionView?.reloadData()
         viewModel?.input.viewDidLoad()
+        bindProperties()
         view.backgroundColor = .systemYellow
+    }
+
+    func showDetailView(indexPath: IndexPath) {
+        coordinator?.eventOccurred(with: .showRecommendationDetail(selectedIndex: indexPath))
     }
 
     private func didTapBack() {
@@ -43,7 +52,12 @@ final class RecommendationsViewController: UIViewController, FTNCoordinatedViewC
     
     private func setupCustomView() {
         customView.setup(backAction: { [weak self] in
-                            self?.didTapBack() })
+            self?.didTapBack() },
+                         showDetailView: { indexPath in
+            
+            print(indexPath.row)
+            self.showDetailView(indexPath: indexPath) }
+        )
     }
 
     private func bindProperties() {

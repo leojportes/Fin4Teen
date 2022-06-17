@@ -5,13 +5,6 @@
 //  Created by Leonardo Portes on 12/06/22.
 //
 
-//
-//  HomeView.swift
-//  Fin4teen
-//
-//  Created by Leonardo Portes on 04/12/21.
-//
-
 import UIKit
 
 class HomeView: UIView, ViewCodeContract {
@@ -20,6 +13,7 @@ class HomeView: UIView, ViewCodeContract {
     var didTapMenu: Action?
     var didTapContents: Action?
     var didTapRecommendations: Action?
+    var didPullRefresh: Action?
     
     var newsList: [Article] = [] {
         didSet {
@@ -33,6 +27,8 @@ class HomeView: UIView, ViewCodeContract {
     override init(frame: CGRect) {
         super.init(frame: frame)
         self.backgroundColor = UIColor.setColor(color: .whiteStandart)
+        tableview.refreshControl = UIRefreshControl()
+        tableview.refreshControl?.addTarget(self, action: #selector(callPullToRefresh), for: .valueChanged)
     }
     
     required init?(coder: NSCoder) {
@@ -165,6 +161,10 @@ class HomeView: UIView, ViewCodeContract {
             spinningCircleView.animate()
         }
     }
+
+    @objc private func callPullToRefresh() {
+        self.didPullRefresh?()
+    }
     
 }
 
@@ -181,9 +181,8 @@ extension HomeView: UITableViewDelegate, UITableViewDataSource {
         }
         
         let news = newsList[indexPath.row]
-        
-        cell.setupCustomCell(image: news.urlToImage ?? "",
-                             title: news.title ?? "")
+        cell.setupCustomCell(image: news.urlToImage ?? String.empty,
+                             title: news.title ?? String.empty)
         return cell
     }
     

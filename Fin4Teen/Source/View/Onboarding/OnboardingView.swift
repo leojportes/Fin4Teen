@@ -146,6 +146,14 @@ class OnboardingView: UIView, ViewCodeContract {
         return btn
     }()
     
+    lazy var mediasView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .clear
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    
     // MARK: - Setup viewcode
     
     func setupHierarchy() {
@@ -157,10 +165,10 @@ class OnboardingView: UIView, ViewCodeContract {
         topView.addSubview(descriptionMarkLabel)
         topView.addSubview(joinLabel)
         topView.addSubview(headerImage)
-        self.addSubview(socialMediaLabel)
-        self.addSubview(instagramButton)
-        self.addSubview(webSiteButton)
-
+        self.addSubview(mediasView)
+        mediasView.addSubview(socialMediaLabel)
+        mediasView.addSubview(instagramButton)
+        mediasView.addSubview(webSiteButton)
     }
     
     func setupConstraints() {
@@ -197,25 +205,31 @@ class OnboardingView: UIView, ViewCodeContract {
             .heightAnchor(55)
             .widthAnchor(160)
         
-        socialMediaLabel
-            .topAnchor(in: loginButton, attribute: .bottom, padding: 70)
+        mediasView
+            .topAnchor(in: loginButton, attribute: .bottom, padding: 40)
             .centerX(in: self)
+            .heightAnchor(90)
+            .widthAnchor(230)
         
+        socialMediaLabel
+            .topAnchor(in: mediasView, attribute: .top, padding: 2)
+            .centerX(in: mediasView)
+
         instagramButton
-            .topAnchor(in: socialMediaLabel, attribute: .bottom, padding: 30)
-            .leftAnchor(in: self, padding: 158)
+            .topAnchor(in: socialMediaLabel, attribute: .bottom, padding: 20)
+            .leftAnchor(in: mediasView, padding: 70)
             .heightAnchor(25)
             .widthAnchor(25)
-        
+
         webSiteButton
-            .topAnchor(in: socialMediaLabel, attribute: .bottom, padding: 26)
-            .leftAnchor(in: instagramButton, padding: 65)
+            .topAnchor(in: socialMediaLabel, attribute: .bottom, padding: 15)
+            .rightAnchor(in: mediasView, padding: 70)
             .heightAnchor(35)
             .widthAnchor(35)
         
         signUpButton
-            .centerX(in: self)
-            .bottomAnchor(in: self, attribute: .bottom, padding: 10)
+            .topAnchor(in: mediasView, attribute: .bottom)
+            .centerX(in: mediasView)
             .heightAnchor(30)
         
     }

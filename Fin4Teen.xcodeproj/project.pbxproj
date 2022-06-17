@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C0B5D206285AE291009CD075 /* StringsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B5D205285AE291009CD075 /* StringsConstants.swift */; };
+		C0B5D208285AEFD9009CD075 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B5D207285AEFD9009CD075 /* Array+Extension.swift */; };
+		C0B5D3D3285BD8F1009CD075 /* RecommendationsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B5D3D2285BD8F1009CD075 /* RecommendationsDetailView.swift */; };
+		C0B5D3D5285BDE23009CD075 /* RecommendationsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B5D3D4285BDE23009CD075 /* RecommendationsDetailViewController.swift */; };
 		C0BDFB6C285656CF00BE4040 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BDFB6B285656CF00BE4040 /* BaseCoordinator.swift */; };
 		C0BDFB6E285656E900BE4040 /* CoordinatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BDFB6D285656E900BE4040 /* CoordinatedViewController.swift */; };
 		C0BDFB702856571C00BE4040 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BDFB6F2856571C00BE4040 /* Coordinator.swift */; };
@@ -103,6 +107,10 @@
 /* Begin PBXFileReference section */
 		62695A8A40A546810B06B816 /* Pods-Fin4Teen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fin4Teen.release.xcconfig"; path = "Target Support Files/Pods-Fin4Teen/Pods-Fin4Teen.release.xcconfig"; sourceTree = "<group>"; };
 		95415546945DB25EC2339FF5 /* Pods_Fin4Teen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fin4Teen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0B5D205285AE291009CD075 /* StringsConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringsConstants.swift; sourceTree = "<group>"; };
+		C0B5D207285AEFD9009CD075 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
+		C0B5D3D2285BD8F1009CD075 /* RecommendationsDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsDetailView.swift; sourceTree = "<group>"; };
+		C0B5D3D4285BDE23009CD075 /* RecommendationsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsDetailViewController.swift; sourceTree = "<group>"; };
 		C0BDFB6B285656CF00BE4040 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		C0BDFB6D285656E900BE4040 /* CoordinatedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatedViewController.swift; sourceTree = "<group>"; };
 		C0BDFB6F2856571C00BE4040 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -227,6 +235,23 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		C0B5D204285AE267009CD075 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				C0B5D205285AE291009CD075 /* StringsConstants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		C0B5D3D1285BD89E009CD075 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				C0B5D3D4285BDE23009CD075 /* RecommendationsDetailViewController.swift */,
+				C0B5D3D2285BD8F1009CD075 /* RecommendationsDetailView.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		C0BDFB69285656AC00BE4040 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,6 +266,7 @@
 		C0BDFB6A285656B600BE4040 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				C0B5D204285AE267009CD075 /* Constants */,
 				C0BDFC25285676F100BE4040 /* Fonts */,
 				C0BDFBA128565BD200BE4040 /* Enums */,
 				C0BDFB9228565A1400BE4040 /* Helpers */,
@@ -264,6 +290,7 @@
 				C0BDFBA628565C5400BE4040 /* UIFont+Extension.swift */,
 				C0BDFBA828565CAC00BE4040 /* UITextField+Extension.swift */,
 				C0BDFBAE28565D4600BE4040 /* UIImageView+Extension.swift */,
+				C0B5D207285AEFD9009CD075 /* Array+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -385,6 +412,7 @@
 		C0BDFBC72856644600BE4040 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C0B5D3D1285BD89E009CD075 /* Common */,
 				C0BDFC0F28566EC700BE4040 /* SignUp */,
 				C0BDFC0B28566E7D00BE4040 /* RecoveryPass */,
 				C0BDFBF928566CF200BE4040 /* Recommendations */,
@@ -804,18 +832,22 @@
 				C0BDFBF628566C1600BE4040 /* OnboardingView.swift in Sources */,
 				C0BDFC0A28566E6500BE4040 /* RecoveryPassView.swift in Sources */,
 				C0BDFBD8285665A800BE4040 /* FinancialMarketViewController.swift in Sources */,
+				C0B5D3D3285BD8F1009CD075 /* RecommendationsDetailView.swift in Sources */,
 				C0BDFC0428566DA500BE4040 /* RecommendationsCollectionViewCell.swift in Sources */,
 				C0BDFBDC2856660600BE4040 /* StockExchangeViewController.swift in Sources */,
 				C0BDFBFB28566D0700BE4040 /* RecommendationsView.swift in Sources */,
 				C0BDFB702856571C00BE4040 /* Coordinator.swift in Sources */,
 				C0BDFBAF28565D4600BE4040 /* UIImageView+Extension.swift in Sources */,
 				C0BDFBDA285665CF00BE4040 /* InvestimentsViewController.swift in Sources */,
+				C0B5D206285AE291009CD075 /* StringsConstants.swift in Sources */,
 				C0BDFC0628566DC700BE4040 /* SeriesTvCollectionView.swift in Sources */,
 				C0BDFB9428565A8A00BE4040 /* FTNAlertView.swift in Sources */,
+				C0B5D208285AEFD9009CD075 /* Array+Extension.swift in Sources */,
 				C0BDFB82285658CC00BE4040 /* FTNButtonIcon.swift in Sources */,
 				C0BDFC3B28567E4000BE4040 /* RecommendationsModel.swift in Sources */,
 				C0BDFBBD2856617700BE4040 /* HomeCoordinator.swift in Sources */,
 				C0BDFB8F2856599A00BE4040 /* UIView+RawAnchors.swift in Sources */,
+				C0B5D3D5285BDE23009CD075 /* RecommendationsDetailViewController.swift in Sources */,
 				C0BDFB892856595500BE4040 /* Padding.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -27,11 +27,12 @@ class RecoveryPassView: UIView, ViewCodeContract {
     
     private lazy var closeButton: FTNButtonIcon = {
         let button = FTNButtonIcon(image: UIImage(named: Image.close.rawValue),
-                                    backgroundColor: UIColor.clear,
-                                    accessibility: "Fechar",
-                                    action: { [weak self] in
-                                        self?.didTapClose?()
-                                    })
+                                   backgroundColor: UIColor.clear,
+                                   colorButton: UIColor.setColor(color: .blackColor),
+                                   accessibility: "Fechar",
+                                   action: { [weak self] in
+            self?.didTapClose?()
+        })
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()

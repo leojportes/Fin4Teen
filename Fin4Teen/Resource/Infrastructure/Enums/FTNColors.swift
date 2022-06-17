@@ -10,6 +10,7 @@ import Foundation
 public enum TeenColors: String {
     
     case grayFullDark = "grayFullDark"
+    case grayDarkHigh = "grayDarkHigh"
     case whiteStandart = "whiteStandart"
     case purpleTeen = "purpleTeen"
     case purpleOpaque = "purpleOpaque"

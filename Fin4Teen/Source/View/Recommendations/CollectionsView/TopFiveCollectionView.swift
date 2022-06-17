@@ -9,6 +9,8 @@ import UIKit
 
 final class topFiveCollectionView: UIView, ViewCodeContract {
     
+    var showDetailView: ((IndexPath) -> Void)?
+    
     var movieList: [Movie] = [] {
         didSet {
             self.collectionView?.reloadData()
@@ -39,7 +41,7 @@ final class topFiveCollectionView: UIView, ViewCodeContract {
         return view
     }()
     
-    private var collectionView: UICollectionView?
+    private(set) var collectionView: UICollectionView?
     
     private func setupCollectionView() {
         let layout = UICollectionViewFlowLayout()
@@ -130,7 +132,7 @@ extension topFiveCollectionView: UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("tapped top five")
+        self.showDetailView?(indexPath)
     }
 
 }

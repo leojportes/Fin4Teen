@@ -154,7 +154,6 @@ class LoginView: UIView, ViewCodeContract {
             .centerX(in: headerView)
             .topAnchor(in: headerView, padding: 110)
         
-        
         closeButton
             .topAnchor(in: headerView, padding: 40)
             .rightAnchor(in: headerView, padding: 30)
@@ -188,11 +187,10 @@ class LoginView: UIView, ViewCodeContract {
             .heightAnchor(60)
         
         recoveryPassLabel
+            .centerX(in: loginButton)
             .topAnchor(in: loginButton, attribute: .bottom, padding: 13)
-            .leftAnchor(in: self, padding: 110)
             .widthAnchor(200)
             .heightAnchor(20)
-        
     }
     
     func setupConfiguration() {

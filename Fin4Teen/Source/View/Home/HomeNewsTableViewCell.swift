@@ -17,6 +17,10 @@ final class HomeNewsTableViewCell: UITableViewCell, ViewCodeContract {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupView()
     }
+
+    override func prepareForReuse() {
+        imagePoster.image = nil
+    }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")

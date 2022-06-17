@@ -17,7 +17,6 @@ class RecommendationsView: UIView, ViewCodeContract {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
     }
     
     override func layoutSubviews() {
@@ -53,7 +52,7 @@ class RecommendationsView: UIView, ViewCodeContract {
         return view
     }()
   
-    private lazy var topFiveHeaderView: topFiveCollectionView = {
+    private(set) lazy var topFiveHeaderView: topFiveCollectionView = {
         let view = topFiveCollectionView()
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -175,11 +174,10 @@ class RecommendationsView: UIView, ViewCodeContract {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
-    
-    func setupConfiguration() { /* empty method */ }
-    
-    func setup(backAction: @escaping Action) {
+
+    func setup(backAction: @escaping Action, showDetailView: ((IndexPath) -> Void)?) {
         self.didTapBack = backAction
+        self.topFiveHeaderView.showDetailView = showDetailView
     }
     
 }
