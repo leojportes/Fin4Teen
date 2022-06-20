@@ -21,7 +21,7 @@ final class ContentsCollectionViewCell: UICollectionViewCell, ViewCodeContract {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        contentView.backgroundColor = UIColor.setColor(color: .grayDarkest)
+        contentView.backgroundColor = UIColor.setColor(.grayDarkest)
         contentView.layer.cornerRadius = 5
         contentView.layer.masksToBounds = true
         setupView()

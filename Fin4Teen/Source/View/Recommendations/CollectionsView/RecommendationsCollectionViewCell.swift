@@ -22,7 +22,7 @@ final class RecommendationsCollectionViewCell: UICollectionViewCell, ViewCodeCon
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        contentView.backgroundColor = UIColor.setColor(color: .purpleTeen)
+        contentView.backgroundColor = UIColor.setColor(.purpleTeen)
         contentView.layer.cornerRadius = 5
         contentView.layer.masksToBounds = true
         setupView()

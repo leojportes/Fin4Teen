@@ -63,8 +63,8 @@ final class ContentsCollectionView: UIView, ViewCodeContract {
     
     private lazy var navigationBarView: FTNNavigationBarView = {
         let view = FTNNavigationBarView(backgroundColor: UIColor.white,
-                                         colorButton: UIColor.setColor(color: .blackColor),
-                                         colorHorizontalLine: UIColor.setColor(color: .grayMedium),
+                                         colorButton: UIColor.setColor(.blackColor),
+                                         colorHorizontalLine: UIColor.setColor(.grayMedium),
                                          iconRight: UIImage(named: Image.angleLeft.rawValue),
                                          backButtonAction: { [weak self] in
                                             self?.didTapBack?()
@@ -119,7 +119,7 @@ final class ContentsCollectionView: UIView, ViewCodeContract {
     
     func setupContestsView(title: String) {
         navigationBarView.set(title: title,
-                 color: UIColor.setColor(color: .blackColor),
+                 color: UIColor.setColor(.blackColor),
                  font: UIFont.teenRegularFont.withSize(18))
     }
     

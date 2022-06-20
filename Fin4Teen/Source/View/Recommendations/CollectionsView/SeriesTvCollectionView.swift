@@ -61,7 +61,7 @@ final class SeriesTvCollectionView: UIView, ViewCodeContract {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Séries e Programas de TV"
-        label.textColor = UIColor.setColor(color: .grayLight)
+        label.textColor = UIColor.setColor(.grayLight)
         label.font = UIFont.teenBoldFont.withSize(23)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label

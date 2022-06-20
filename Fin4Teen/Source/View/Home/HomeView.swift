@@ -26,7 +26,7 @@ class HomeView: UIView, ViewCodeContract {
     // MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = UIColor.setColor(color: .whiteStandart)
+        self.backgroundColor = UIColor.setColor(.whiteStandart)
         tableview.refreshControl = UIRefreshControl()
         tableview.refreshControl?.addTarget(self, action: #selector(callPullToRefresh), for: .valueChanged)
     }

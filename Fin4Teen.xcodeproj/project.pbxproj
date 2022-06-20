@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C060844428600A68001CF2BD /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060844328600A68001CF2BD /* UIImage+Extension.swift */; };
 		C0B5D206285AE291009CD075 /* StringsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B5D205285AE291009CD075 /* StringsConstants.swift */; };
 		C0B5D208285AEFD9009CD075 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B5D207285AEFD9009CD075 /* Array+Extension.swift */; };
 		C0B5D3D3285BD8F1009CD075 /* RecommendationsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B5D3D2285BD8F1009CD075 /* RecommendationsDetailView.swift */; };
@@ -107,6 +108,7 @@
 /* Begin PBXFileReference section */
 		62695A8A40A546810B06B816 /* Pods-Fin4Teen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fin4Teen.release.xcconfig"; path = "Target Support Files/Pods-Fin4Teen/Pods-Fin4Teen.release.xcconfig"; sourceTree = "<group>"; };
 		95415546945DB25EC2339FF5 /* Pods_Fin4Teen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fin4Teen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C060844328600A68001CF2BD /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		C0B5D205285AE291009CD075 /* StringsConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringsConstants.swift; sourceTree = "<group>"; };
 		C0B5D207285AEFD9009CD075 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		C0B5D3D2285BD8F1009CD075 /* RecommendationsDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsDetailView.swift; sourceTree = "<group>"; };
@@ -291,6 +293,7 @@
 				C0BDFBA828565CAC00BE4040 /* UITextField+Extension.swift */,
 				C0BDFBAE28565D4600BE4040 /* UIImageView+Extension.swift */,
 				C0B5D207285AEFD9009CD075 /* Array+Extension.swift */,
+				C060844328600A68001CF2BD /* UIImage+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -781,6 +784,7 @@
 				C0BDFBAB28565CD400BE4040 /* AppControlVersion.swift in Sources */,
 				C0BDFBF328566BB100BE4040 /* MenuViewController.swift in Sources */,
 				C0BDFC1128566ED300BE4040 /* SignUpView.swift in Sources */,
+				C060844428600A68001CF2BD /* UIImage+Extension.swift in Sources */,
 				C0BDFBC6285662CB00BE4040 /* ServiceNews.swift in Sources */,
 				C0BDFB78285657A800BE4040 /* UILabel+Extension.swift in Sources */,
 				C0BDFBBA285660B900BE4040 /* MainCoordinator.swift in Sources */,

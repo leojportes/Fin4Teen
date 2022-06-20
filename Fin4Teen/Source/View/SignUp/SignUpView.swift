@@ -42,7 +42,7 @@ class SignUpView: UIView, ViewCodeContract {
         let label = UILabel()
         label.text = "Crie a sua conta."
         label.font = UIFont.teenSemiBoldFontButton.withSize(30)
-        label.textColor = UIColor.setColor(color: .blackColor)
+        label.textColor = UIColor.setColor(.blackColor)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -51,7 +51,7 @@ class SignUpView: UIView, ViewCodeContract {
         let label = UILabel()
         label.text = "Email"
         label.font = UIFont.teenMediumFont.withSize(18)
-        label.textColor = UIColor.setColor(color: .blackColor)
+        label.textColor = UIColor.setColor(.blackColor)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -60,7 +60,7 @@ class SignUpView: UIView, ViewCodeContract {
         let label = UILabel()
         label.text = "Senha"
         label.font = UIFont.teenMediumFont.withSize(18)
-        label.textColor = UIColor.setColor(color: .blackColor)
+        label.textColor = UIColor.setColor(.blackColor)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -69,7 +69,7 @@ class SignUpView: UIView, ViewCodeContract {
         let label = UILabel()
         label.text = "Confirme sua senha"
         label.font = UIFont.teenMediumFont.withSize(18)
-        label.textColor = UIColor.setColor(color: .blackColor)
+        label.textColor = UIColor.setColor(.blackColor)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -106,8 +106,8 @@ class SignUpView: UIView, ViewCodeContract {
     private lazy var loginButton: FNTButton = {
         let button = FNTButton(title: "Criar conta",
                                 font: UIFont.teenSemiBoldFontButton,
-                                backgroundColor: UIColor.setColor(color: .blackColor),
-                                textColor: UIColor.setColor(color: .whiteStandart),
+                                backgroundColor: UIColor.setColor(.blackColor),
+                                textColor: UIColor.setColor(.whiteStandart),
                                 accessibilityTitle: "Login",
                                 action: { [weak self] in
                                     print("entrar tapped")
@@ -182,7 +182,7 @@ class SignUpView: UIView, ViewCodeContract {
     }
     
     func setupConfiguration() {
-        self.backgroundColor = UIColor.setColor(color: .whiteStandart)
+        self.backgroundColor = UIColor.setColor(.whiteStandart)
         setupTextField()
     }
     

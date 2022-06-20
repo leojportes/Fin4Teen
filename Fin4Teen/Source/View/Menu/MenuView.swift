@@ -22,7 +22,7 @@ class MenuView: UIView, ViewCodeContract {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = UIColor.setColor(color: .grayLight)
+        self.backgroundColor = UIColor.setColor(.grayLight)
         setupView()
     }
     
@@ -34,7 +34,7 @@ class MenuView: UIView, ViewCodeContract {
     
     private lazy var headerView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.setColor(color: .whiteStandart)
+        view.backgroundColor = UIColor.setColor(.whiteStandart)
         view.layer.masksToBounds = true
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -50,7 +50,7 @@ class MenuView: UIView, ViewCodeContract {
     private lazy var usernameLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.teenSemiBoldFontButton.withSize(16)
-        label.textColor = UIColor.setColor(color: .blueDarkColor)
+        label.textColor = UIColor.setColor(.blueDarkColor)
         label.text = "Username@"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -60,7 +60,7 @@ class MenuView: UIView, ViewCodeContract {
         let view = FTNCellView()
         view.setup(title: "Sobre",
                    icon: UIImage(named: Image.angleRight.rawValue),
-                   colorHorizontalLine: UIColor.setColor(color: .grayDarkest),
+                   colorHorizontalLine: UIColor.setColor(.grayDarkest),
                    action: { [weak self] in
                     self?.didTapAbout?()
                    })
@@ -72,7 +72,7 @@ class MenuView: UIView, ViewCodeContract {
         let view = FTNCellView()
         view.setup(title: "Ajuda",
                    icon: UIImage(named: Image.angleRight.rawValue),
-                   colorHorizontalLine: UIColor.setColor(color: .grayDarkest),
+                   colorHorizontalLine: UIColor.setColor(.grayDarkest),
                    action: { [weak self] in
                     self?.didTapHelp?()
                    })
@@ -84,7 +84,7 @@ class MenuView: UIView, ViewCodeContract {
         let view = FTNCellView()
         view.setup(title: "FAQ",
                    icon: UIImage(named: Image.angleRight.rawValue),
-                   colorHorizontalLine: UIColor.setColor(color: .grayDarkest),
+                   colorHorizontalLine: UIColor.setColor(.grayDarkest),
                    action: { [weak self] in
                     self?.didTapHelp?()
                    })
@@ -95,7 +95,7 @@ class MenuView: UIView, ViewCodeContract {
     private lazy var versionAppSectionView: FTNCellView = {
         let view = FTNCellView()
         view.setup(title: "Versão do aplicativo (\(versionApp))",
-                   colorHorizontalLine: UIColor.setColor(color: .grayDarkest),
+                   colorHorizontalLine: UIColor.setColor(.grayDarkest),
                    action: { [weak self] in
                     /*empty method*/
                    })
@@ -112,7 +112,7 @@ class MenuView: UIView, ViewCodeContract {
     private lazy var closeButton: FTNButtonIcon = {
         let button = FTNButtonIcon(image: UIImage(named: Image.close.rawValue),
                                     backgroundColor: UIColor.clear,
-                                    colorButton: UIColor.setColor(color: .blackColor),
+                                    colorButton: UIColor.setColor(.blackColor),
                                     accessibility: "Fechar",
                                     action: { [weak self] in
                                         self?.didTapClose?()

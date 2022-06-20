@@ -10,7 +10,7 @@ import Foundation
 
 public extension UIColor {
     
-    static func setColor(color: TeenColors) -> UIColor {
+    static func setColor(_ color: TeenColors) -> UIColor {
         return UIColor(named: color.rawValue) ?? UIColor.white
     }
 

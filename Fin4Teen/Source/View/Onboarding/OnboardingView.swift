@@ -18,7 +18,7 @@ class OnboardingView: UIView, ViewCodeContract {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = UIColor.setColor(color: .whiteStandart)
+        self.backgroundColor = UIColor.setColor(.whiteStandart)
         setupView()
     }
     
@@ -32,7 +32,7 @@ class OnboardingView: UIView, ViewCodeContract {
     
     private lazy var topView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.setColor(color: .whiteStandart)
+        view.backgroundColor = UIColor.setColor(.whiteStandart)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -47,7 +47,7 @@ class OnboardingView: UIView, ViewCodeContract {
     private lazy var topLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.teenLightFont.withSize(22)
-        label.textColor = UIColor.setColor(color: .blackColor)
+        label.textColor = UIColor.setColor(.blackColor)
         label.text = "Boas-vindas ao"
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -65,7 +65,7 @@ class OnboardingView: UIView, ViewCodeContract {
     private lazy var descriptionMarkLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.teenMediumFont.withSize(15)
-        label.textColor = UIColor.setColor(color: .grayTeen)
+        label.textColor = UIColor.setColor(.grayTeen)
         label.text = "Uma plataforma dedicada para ensinar o melhor do mundo das finanças e investimentos."
         label.numberOfLines = .zero
         label.setLineHeight(lineHeight: 5)
@@ -77,7 +77,7 @@ class OnboardingView: UIView, ViewCodeContract {
     private lazy var joinLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.teenMediumFont.withSize(15)
-        label.textColor = UIColor.setColor(color: .grayTeen)
+        label.textColor = UIColor.setColor(.grayTeen)
         label.text = "Entre de graça."
         label.textAlignment = .left
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -87,13 +87,13 @@ class OnboardingView: UIView, ViewCodeContract {
     private lazy var loginButton: FNTButton = {
         let button = FNTButton(title: "Entrar",
                                 font: UIFont.teenSemiBoldFontButton,
-                                backgroundColor: UIColor.setColor(color: .grayLight),
-                                textColor: UIColor.setColor(color: .whiteStandart),
+                                backgroundColor: UIColor.setColor(.grayLight),
+                                textColor: UIColor.setColor(.whiteStandart),
                                 accessibilityTitle: "Entrar",
                                 action: { [weak self] in
                                     self?.didTapLogin?()
                                 })
-        button.setTitleColor(UIColor.setColor(color: .blackColor), for: .normal)
+        button.setTitleColor(UIColor.setColor(.blackColor), for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
@@ -101,7 +101,7 @@ class OnboardingView: UIView, ViewCodeContract {
     private lazy var signUpButton: FNTButton = {
         let button = FNTButton(title: "Crie sua conta",
                                 font: UIFont.teenSemiBoldFontButton.withSize(17),
-                                backgroundColor: UIColor.setColor(color: .whiteStandart),
+                                backgroundColor: UIColor.setColor(.whiteStandart),
                                 textColor: .black,
                                 accessibilityTitle: "Crie sua conta.",
                                 action: { [weak self] in
@@ -114,7 +114,7 @@ class OnboardingView: UIView, ViewCodeContract {
     private lazy var socialMediaLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.teenMediumFont.withSize(14)
-        label.textColor = UIColor.setColor(color: .blackColor)
+        label.textColor = UIColor.setColor(.blackColor)
         label.text = "Nossas redes sociais"
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -124,7 +124,7 @@ class OnboardingView: UIView, ViewCodeContract {
     private lazy var instagramButton: FTNButtonIcon = {
         let btn = FTNButtonIcon(image: UIImage(named: Image.instagram.rawValue),
                                  backgroundColor: .clear,
-                                 colorButton: UIColor.setColor(color: .blackColor),
+                                 colorButton: UIColor.setColor(.blackColor),
                                  accessibility: "Instagram.",
                                  action: { [weak self] in
                                     self?.didTapInsta?()
@@ -137,7 +137,7 @@ class OnboardingView: UIView, ViewCodeContract {
     private lazy var webSiteButton: FTNButtonIcon = {
         let btn = FTNButtonIcon(image: UIImage(named: Image.webSite.rawValue),
                                  backgroundColor: .clear,
-                                 colorButton: UIColor.setColor(color: .blackColor),
+                                 colorButton: UIColor.setColor(.blackColor),
                                  accessibility: "Web site.",
                                  action: { [weak self] in
                                     self?.didTapWebSite?()

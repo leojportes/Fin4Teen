@@ -14,10 +14,10 @@ final class FTNTextField: UITextField {
     
     init() {
         super.init(frame: .zero)
-        self.backgroundColor = UIColor.setColor(color: .whiteStandart)
+        self.backgroundColor = UIColor.setColor(.whiteStandart)
         self.layer.borderWidth = 1.0
         self.layer.cornerRadius = 10
-        self.layer.borderColor = UIColor.setColor(color: .grayLight).cgColor
+        self.layer.borderColor = UIColor.setColor(.grayLight).cgColor
         self.addShadow()
     }
     

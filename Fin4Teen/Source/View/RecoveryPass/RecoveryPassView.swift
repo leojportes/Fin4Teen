@@ -28,7 +28,7 @@ class RecoveryPassView: UIView, ViewCodeContract {
     private lazy var closeButton: FTNButtonIcon = {
         let button = FTNButtonIcon(image: UIImage(named: Image.close.rawValue),
                                    backgroundColor: UIColor.clear,
-                                   colorButton: UIColor.setColor(color: .blackColor),
+                                   colorButton: UIColor.setColor(.blackColor),
                                    accessibility: "Fechar",
                                    action: { [weak self] in
             self?.didTapClose?()
@@ -41,7 +41,7 @@ class RecoveryPassView: UIView, ViewCodeContract {
         let label = UILabel()
         label.text = "Recupere sua senha."
         label.font = UIFont.teenSemiBoldFontButton.withSize(30)
-        label.textColor = UIColor.setColor(color: .blackColor)
+        label.textColor = UIColor.setColor(.blackColor)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -50,7 +50,7 @@ class RecoveryPassView: UIView, ViewCodeContract {
         let label = UILabel()
         label.text = "Email cadastrado"
         label.font = UIFont.teenMediumFont.withSize(18)
-        label.textColor = UIColor.setColor(color: .blackColor)
+        label.textColor = UIColor.setColor(.blackColor)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -67,8 +67,8 @@ class RecoveryPassView: UIView, ViewCodeContract {
     private lazy var loginButton: FNTButton = {
         let button = FNTButton(title: "Enviar",
                                 font: UIFont.teenSemiBoldFontButton,
-                                backgroundColor: UIColor.setColor(color: .blackColor),
-                                textColor: UIColor.setColor(color: .whiteStandart),
+                                backgroundColor: UIColor.setColor(.blackColor),
+                                textColor: UIColor.setColor(.whiteStandart),
                                 accessibilityTitle: "Enviar",
                                 action: { [weak self] in
                                     print("enviar tapped")
@@ -119,7 +119,7 @@ class RecoveryPassView: UIView, ViewCodeContract {
     }
     
     func setupConfiguration() {
-        self.backgroundColor = UIColor.setColor(color: .whiteStandart)
+        self.backgroundColor = UIColor.setColor(.whiteStandart)
         setupTextField()
     }
     

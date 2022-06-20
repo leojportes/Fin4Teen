@@ -22,6 +22,9 @@ enum Image: String {
     case loboWallStreet = "banner_lobo_wallstreet"
     case withoutImage = "withoutImage"
     case ArrowDiagonal = "img_arrow_diagonal"
+    case heartRed = "heartRed"
+    case heart = "heart"
+
     // MARK: - Numbers images
     
     case one = "img_one"

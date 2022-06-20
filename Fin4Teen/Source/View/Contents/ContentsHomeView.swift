@@ -23,7 +23,7 @@ class ContentsHomeView: UIView, ViewCodeContract {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = UIColor.setColor(color: .whiteStandart)
+        self.backgroundColor = UIColor.setColor(.whiteStandart)
         setupView()
     }
     
@@ -35,14 +35,14 @@ class ContentsHomeView: UIView, ViewCodeContract {
     
     private lazy var navigationBarView: FTNNavigationBarView = {
         let view = FTNNavigationBarView(backgroundColor: UIColor.white,
-                                         colorButton: UIColor.setColor(color: .blackColor),
-                                         colorHorizontalLine: UIColor.setColor(color: .grayMedium),
+                                         colorButton: UIColor.setColor(.blackColor),
+                                         colorHorizontalLine: UIColor.setColor(.grayMedium),
                                          iconRight: UIImage(named: Image.angleLeft.rawValue),
                                          backButtonAction: { [weak self] in
                                             self?.didTapBack?()
                                          })
         view.set(title: "Conteúdos",
-                 color: UIColor.setColor(color: .blackColor),
+                 color: UIColor.setColor(.blackColor),
                  font: UIFont.teenRegularFont.withSize(18))
         view.translatesAutoresizingMaskIntoConstraints = false
         return view

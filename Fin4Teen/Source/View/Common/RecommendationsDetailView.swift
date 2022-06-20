@@ -15,7 +15,7 @@ class RecommendationsDetailView: UIView, ViewCodeContract {
     // MARK: - Init
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = UIColor.setColor(color: .grayDarkHigh)
+        self.backgroundColor = UIColor.setColor(.grayDarkHigh)
         self.alpha = alphaValue
     }
     
@@ -43,14 +43,14 @@ class RecommendationsDetailView: UIView, ViewCodeContract {
     
     private lazy var baseView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.setColor(color: .grayDarkHigh)
+        view.backgroundColor = .setColor(.grayDarkHigh)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
     private lazy var posterView: UIImageView = {
         let image = UIImageView()
-        image.backgroundColor = UIColor.setColor(color: .grayDarkHigh)
+        image.backgroundColor = .setColor(.grayDarkHigh)
         image.roundCorners(cornerRadius: 7)
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
@@ -67,7 +67,7 @@ class RecommendationsDetailView: UIView, ViewCodeContract {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
-        label.font = UIFont.teenBoldFont.withSize(17)
+        label.font = .teenBoldFont.withSize(17)
         label.numberOfLines = .zero
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -75,14 +75,30 @@ class RecommendationsDetailView: UIView, ViewCodeContract {
     
     private lazy var releaseLabel: UILabel = {
         let label = UILabel()
+        label.font = UIFont.teenMediumFont.withSize(13)
+        label.textColor = UIColor.setColor(.grayDarkest)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
+//    private lazy var likeButton: FTNButtonIcon = {
+//        let button = FTNButtonIcon(image: .icon(.heart),
+//                                   backgroundColor: .clear,
+//                                   colorButton: .setColor(.whiteStandart),
+//                                   accessibility: "Curtir",
+//                                   switchColor: true,
+//                                   selectedColor: .systemRed,
+//                                   action: { [weak self] in
+//            print("LIKE TAPPED")
+//        })
+//        button.translatesAutoresizingMaskIntoConstraints = false
+//        return button
+//    }()
+
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.teenMediumFont.withSize(15)
-        label.textColor = UIColor.setColor(color: .grayLight)
+        label.textColor = UIColor.setColor(.grayLight)
         label.backgroundColor = .clear
         label.numberOfLines = .zero
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -99,8 +115,8 @@ class RecommendationsDetailView: UIView, ViewCodeContract {
         containerView.addSubview(posterView)
         containerView.addSubview(titleLabel)
         containerView.addSubview(descriptionLabel)
-        
         containerView.addSubview(releaseLabel)
+//        containerView.addSubview(likeButton)
     }
     
     func setupConstraints() {
@@ -135,13 +151,21 @@ class RecommendationsDetailView: UIView, ViewCodeContract {
             .widthAnchor(190)
             .leftAnchor(in: containerView, padding: 15)
         
-        releaseLabel
-            .topAnchor(in: containerView, padding: 20)
-
         titleLabel
             .topAnchor(in: containerView, padding: 25)
             .leftAnchor(in: posterView, attribute: .right, padding: 15)
             .rightAnchor(in: containerView, padding: 15)
+    
+        releaseLabel
+            .topAnchor(in: titleLabel, attribute: .bottom, padding: 10)
+            .leftAnchor(in: posterView, attribute: .right, padding: 15)
+            .rightAnchor(in: containerView)
+        
+//        likeButton
+//            .topAnchor(in: releaseLabel, attribute: .bottom, padding: 30)
+//            .leftAnchor(in: posterView, attribute: .right, padding: 15)
+//            .heightAnchor(25)
+//            .widthAnchor(25)
         
         descriptionLabel
             .topAnchor(in: posterView, attribute: .bottom, padding: 25)
@@ -151,9 +175,12 @@ class RecommendationsDetailView: UIView, ViewCodeContract {
     
     // MARK: Bind model - view
     func bind(indexPath: IndexPath, value: [Movie]) {
-        self.posterView.load(urlString: value[indexPath.row].url_poster)
-        self.titleLabel.text = value[indexPath.row].title
-        self.descriptionLabel.text = value[indexPath.row].description
+        let model = value[indexPath.row]
+
+        self.posterView.load(urlString: model.url_poster)
+        self.titleLabel.text = model.title
+        self.descriptionLabel.text = model.description
+        self.releaseLabel.text = model.release
     }
 
 }

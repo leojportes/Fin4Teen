@@ -20,7 +20,7 @@ final class FTNNavigationBarView: UIView, ViewCodeContract {
     
     init(backgroundColor: UIColor,
          colorButton: UIColor? = nil,
-         colorHorizontalLine: UIColor? = UIColor.setColor(color: .grayLight),
+         colorHorizontalLine: UIColor? = UIColor.setColor(.grayLight),
          iconRight: UIImage? = nil,
          backButtonAction: @escaping Action) {
         super.init(frame: .zero)
@@ -54,7 +54,7 @@ final class FTNNavigationBarView: UIView, ViewCodeContract {
     
     private lazy var horizontalLine: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.setColor(color: .grayLight)
+        view.backgroundColor = UIColor.setColor(.grayLight)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()

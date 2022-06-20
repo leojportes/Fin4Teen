@@ -39,14 +39,14 @@ class RecommendationsView: UIView, ViewCodeContract {
     
     private lazy var navigationBarView: FTNNavigationBarView = {
         let view = FTNNavigationBarView(backgroundColor: UIColor.black,
-                                        colorButton: UIColor.setColor(color: .whiteStandart),
-                                        colorHorizontalLine: UIColor.setColor(color: .blackColor),
+                                        colorButton: UIColor.setColor(.whiteStandart),
+                                        colorHorizontalLine: UIColor.setColor(.blackColor),
                                         iconRight: UIImage(named: Image.angleLeft.rawValue),
                                         backButtonAction: { [weak self] in
             self?.didTapBack?()
         })
         view.set(title: "Recomendações",
-                 color: UIColor.setColor(color: .grayLight),
+                 color: UIColor.setColor(.grayLight),
                  font: UIFont.teenRegularFont.withSize(18))
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -169,7 +169,7 @@ class RecommendationsView: UIView, ViewCodeContract {
     
     lazy var viewExemple: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.setColor(color: .grayDarkest)
+        view.backgroundColor = UIColor.setColor(.grayDarkest)
         view.roundCorners(cornerRadius: 10)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view

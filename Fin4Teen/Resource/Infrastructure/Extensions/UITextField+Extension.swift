@@ -10,7 +10,7 @@ import UIKit
 extension UITextField {
     
     /// - Method that shades a textfield.
-    func addShadow(color: CGColor = UIColor.setColor(color: .blackColor).cgColor,
+    func addShadow(color: CGColor = UIColor.setColor(.blackColor).cgColor,
                    radius: CGFloat = 6.0,
                    opacity: Float = 0.1,
                    offset: CGSize = CGSize(width: -4, height: 0)) {

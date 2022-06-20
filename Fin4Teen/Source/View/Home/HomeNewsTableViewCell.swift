@@ -36,7 +36,7 @@ final class HomeNewsTableViewCell: UITableViewCell, ViewCodeContract {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.teenBoldFont.withSize(14)
-        label.textColor = UIColor.setColor(color: .grayFullDark)
+        label.textColor = UIColor.setColor(.grayFullDark)
         label.numberOfLines = 4
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -45,7 +45,7 @@ final class HomeNewsTableViewCell: UITableViewCell, ViewCodeContract {
     private lazy var iconLink: FTNButtonIcon = {
         let button = FTNButtonIcon(image: UIImage(named: Image.ArrowDiagonal.rawValue),
                                     backgroundColor: UIColor.clear,
-                                    colorButton: UIColor.setColor(color: .blackColor),
+                                    colorButton: UIColor.setColor(.blackColor),
                                    accessibility: "Link externo", action: { })
         button.translatesAutoresizingMaskIntoConstraints = false
         button.accessibilityTraits = .link

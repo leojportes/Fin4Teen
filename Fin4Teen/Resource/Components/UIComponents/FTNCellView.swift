@@ -28,7 +28,7 @@ public final class FTNCellView: UIView, ViewCodeContract {
     
     private lazy var horizontalLine: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.setColor(color: .grayLight)
+        view.backgroundColor = UIColor.setColor(.grayLight)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -48,7 +48,7 @@ public final class FTNCellView: UIView, ViewCodeContract {
     
     private lazy var notifyView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor.setColor(color: .grayLight)
+        view.backgroundColor = UIColor.setColor(.grayLight)
         view.layer.cornerRadius = 10
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -102,7 +102,7 @@ public final class FTNCellView: UIView, ViewCodeContract {
                       font: UIFont? = UIFont.teenRegularFont.withSize(16),
                       colorFont: UIColor? = nil,
                       icon: UIImage? = nil,
-                      colorHorizontalLine: UIColor? = UIColor.setColor(color: .grayLight),
+                      colorHorizontalLine: UIColor? = UIColor.setColor(.grayLight),
                       action: Action?) {
         self.backgroundColor = backgroundColor
         self.translatesAutoresizingMaskIntoConstraints = false

@@ -12,6 +12,9 @@ final class FTNButtonIcon: UIButton {
     // MARK: - Private properties
     
     private var didTap: (() -> Void)?
+    private var switchColor: Bool = false
+    private var selectedColor: UIColor = .white
+    private var initialColor: UIColor = .white
     
     // MARK: - Init
     
@@ -27,12 +30,17 @@ final class FTNButtonIcon: UIButton {
          backgroundColor: UIColor = .clear,
          colorButton: UIColor? = nil,
          accessibility: String = "",
+         switchColor: Bool = false,
+         selectedColor: UIColor? = nil,
          action: Action?) {
         super.init(frame: .zero)
         self.accessibilityLabel = accessibility
         self.accessibilityTraits = .button
         self.layer.masksToBounds = true
         self.backgroundColor = backgroundColor
+        self.switchColor = switchColor
+        self.selectedColor = selectedColor ?? .white
+        self.initialColor = colorButton ?? .white
         
         let image = image
         let tintedImage = image?.withRenderingMode(.alwaysTemplate)
@@ -45,7 +53,15 @@ final class FTNButtonIcon: UIButton {
     
     // MARK: - Actions
     
-    @objc private func didTapButton() {
+    @objc private func didTapButton(_ sender: UIButton) {
+        if switchColor {
+            sender.isSelected = sender.isSelected.not
+            if sender.isSelected {
+                self.tintColor = selectedColor
+            } else {
+                self.tintColor = initialColor
+            }
+        }
         self.didTap?()
     }
     

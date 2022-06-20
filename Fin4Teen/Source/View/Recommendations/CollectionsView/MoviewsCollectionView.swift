@@ -57,7 +57,7 @@ final class MoviesCollectionView: UIView, ViewCodeContract {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Filmes"
-        label.textColor = UIColor.setColor(color: .grayLight)
+        label.textColor = UIColor.setColor(.grayLight)
         label.font = UIFont.teenBoldFont.withSize(23)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
