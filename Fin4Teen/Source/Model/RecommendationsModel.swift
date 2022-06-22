@@ -44,7 +44,7 @@ struct Book: Codable {
     let description: String?
     let pageCount: String?
     let release: String?
-    let externalLink: String?
+    let externalLink: String
 }
 
 // MARK: - Tvshows
@@ -60,9 +60,9 @@ struct Tvshow: Codable {
     let release: String?
     let url_poster: String
     let duration: String?
-    let url_netflix: String?
-    let url_amazon: String?
-    let url_appletv: String?
+    let url_netflix: String
+    let url_amazon: String
+    let url_appletv: String
 }
 
 // MARK: - Recommendation Type

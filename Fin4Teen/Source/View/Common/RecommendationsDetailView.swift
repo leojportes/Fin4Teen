@@ -10,7 +10,13 @@ import UIKit
 class RecommendationsDetailView: UIView, ViewCodeContract {
     
     // MARK: - Properties
-    var urlStremming: String = ""
+    var urlNetflix: String = ""
+    var urlAmazonBooks: String = ""
+    var urlAmazon: String = ""
+    var urlPrimeVideo: String = ""
+    var urlAppleTv: String = ""
+    var showAlert: Action?
+
     let alphaValue: CGFloat = 0.98
     
     // MARK: - Init
@@ -102,37 +108,59 @@ class RecommendationsDetailView: UIView, ViewCodeContract {
         return label
     }()
     
-    private lazy var netFlix: FTNButtonIcon = {
+    private lazy var netflixButton: FTNButtonIcon = {
         let button = FTNButtonIcon(image: .icon(.netflix),
                                    backgroundColor: .clear,
                                    accessibility: "netflix",
                                    action: { [weak self] in
-            
-            ApplicationWeb.shared.open(url: self?.urlStremming ?? "https://www.netflix.com")
+            let url = self?.urlNetflix
+            if url == String.empty {
+                self?.showAlert?()
+            }
+            ApplicationWeb.shared.open(url: url ?? String.empty)
         })
-        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
-    
-    private lazy var amazon: FTNButtonIcon = {
+
+    private lazy var primeVideoButton: FTNButtonIcon = {
         let button = FTNButtonIcon(image: .icon(.prime),
                                    backgroundColor: .clear,
-                                   accessibility: "prime vídeo",
+                                   accessibility: "Ir para prime vídeo",
                                    action: { [weak self] in
-            print("LIKE TAPPED")
+            let url = self?.urlPrimeVideo
+            if url == String.empty {
+                self?.showAlert?()
+            }
+            ApplicationWeb.shared.open(url: url ?? String.empty)
         })
-        button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
     private lazy var appleTvButton: FTNButtonIcon = {
         let button = FTNButtonIcon(image: .icon(.appleTv),
                                    backgroundColor: .clear,
-                                   accessibility: "apple tv",
+                                   accessibility: "Ir para Apple tv",
                                    action: { [weak self] in
-            print("apple TAPPED")
+            let url = self?.urlAppleTv
+            if url == String.empty {
+                self?.showAlert?()
+            }
+            ApplicationWeb.shared.open(url: url ?? String.empty)
         })
-        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    private lazy var amazonBooksButton: FTNButtonIcon = {
+        let button = FTNButtonIcon(image: .icon(.amazon),
+                                   backgroundColor: .clear,
+                                   accessibility: "Ir para amazon",
+                                   action: { [weak self] in
+            let url = self?.urlAmazonBooks
+            if url == String.empty {
+                self?.showAlert?()
+            }
+            ApplicationWeb.shared.open(url: url ?? String.empty)
+        })
         return button
     }()
 
@@ -157,7 +185,10 @@ class RecommendationsDetailView: UIView, ViewCodeContract {
         containerView.addSubview(descriptionLabel)
         containerView.addSubview(releaseLabel)
         containerView.addSubview(durationLabel)
-        containerView.addSubview(netFlix)
+        containerView.addSubview(netflixButton)
+        containerView.addSubview(amazonBooksButton)
+        containerView.addSubview(appleTvButton)
+        containerView.addSubview(primeVideoButton)
 
     }
     
@@ -213,12 +244,30 @@ class RecommendationsDetailView: UIView, ViewCodeContract {
             .leftAnchor(in: containerView, padding: 15)
             .rightAnchor(in: containerView, padding: 15)
         
-        netFlix
+        netflixButton
             .topAnchor(in: descriptionLabel, attribute: .bottom, padding: 30)
             .leftAnchor(in: containerView, padding: 15)
             .heightAnchor(60)
             .widthAnchor(65)
             .bottomAnchor(in: containerView, padding: 200)
+        
+        amazonBooksButton
+            .topAnchor(in: descriptionLabel, attribute: .bottom, padding: 30)
+            .leftAnchor(in: containerView, padding: 15)
+            .heightAnchor(60)
+            .widthAnchor(65)
+        
+        primeVideoButton
+            .topAnchor(in: descriptionLabel, attribute: .bottom, padding: 30)
+            .leftAnchor(in: netflixButton, attribute: .right, padding: 30)
+            .heightAnchor(62)
+            .widthAnchor(67)
+        
+        appleTvButton
+            .topAnchor(in: descriptionLabel, attribute: .bottom, padding: 35)
+            .leftAnchor(in: primeVideoButton, attribute: .right, padding: 35)
+            .heightAnchor(50)
+            .widthAnchor(55)
   
     }
     
@@ -252,15 +301,30 @@ class RecommendationsDetailView: UIView, ViewCodeContract {
         self.durationLabel.text = model.duration
     }
     
-    func shouldDisplayStreamingButton(show: Bool) {
-        netFlix.isHidden = show.not
-    }
+    func shouldDisplayStreamingButton(type: TypeRec = .movie) {
+        switch type {
 
+        case .movie:
+            amazonBooksButton.isHidden = true
+
+        case .book:
+            amazonBooksButton.isHidden = false
+            netflixButton.isHidden = true
+            primeVideoButton.isHidden = true
+            appleTvButton.isHidden = true
+            
+        case .tvshows:
+            amazonBooksButton.isHidden = true
+
+        case .topFiveMovie:
+            amazonBooksButton.isHidden = true
+        }
+        
+    }
 }
 
 extension RecommendationsDetailView: UIScrollViewDelegate {
-    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        print(scrollView.contentOffset.y)
+        print(scrollView.contentOffset.y) /// Print debug
     }
 }

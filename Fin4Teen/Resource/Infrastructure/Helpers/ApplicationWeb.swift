@@ -14,8 +14,8 @@ public final class ApplicationWeb {
     init() { /*empty method */ }
     
     public func open(url: String) {
-        let urlApplication = url
-        UIApplication.shared.open(URL(string: urlApplication)! as URL,
+        guard let urlApplication: URL = URL(string: url) else { return }
+        UIApplication.shared.open(urlApplication as URL,
                                   options: [:],
                                   completionHandler: nil)
     }

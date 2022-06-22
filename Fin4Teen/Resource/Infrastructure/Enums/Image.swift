@@ -27,6 +27,8 @@ enum Image: String {
     case prime = "prime"
     case appleTv = "apple-tv"
     case netflix = "netflix"
+    case amazon = "amazon"
+
     // MARK: - Numbers images
     
     case one = "img_one"
