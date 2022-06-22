@@ -9,9 +9,8 @@ import UIKit
 
 final class topFiveCollectionView: UIView, ViewCodeContract {
     
-    var showDetailView: ((IndexPath) -> Void)?
-    
-    var movieList: [Movie] = [] {
+    var showDetailView: ((IndexPath, TypeRec) -> Void)?
+    var topFiveMovieList: [Movie] = [] {
         didSet {
             self.collectionView?.reloadData()
         }
@@ -114,12 +113,12 @@ extension topFiveCollectionView: UICollectionViewDelegate, UICollectionViewDataS
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return movieList.count
+        return topFiveMovieList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecommendationsCollectionViewCell.identifier, for: indexPath) as? RecommendationsCollectionViewCell else { return UICollectionViewCell() }
-        let movies = movieList
+        let movies = topFiveMovieList[indexPath.row]
         
         let imagesTop = [UIImage(named: Image.one.rawValue),
                          UIImage(named: Image.two.rawValue),
@@ -127,12 +126,13 @@ extension topFiveCollectionView: UICollectionViewDelegate, UICollectionViewDataS
                          UIImage(named: Image.four.rawValue),
                          UIImage(named: Image.five.rawValue)]
         
-        cell.setupCell(image: movies[indexPath.row].url_poster, topFive: imagesTop[indexPath.row])
+        cell.setupCell(image: movies.url_poster, topFive: imagesTop[indexPath.row])
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.showDetailView?(indexPath)
+        print(indexPath.row)
+        self.showDetailView?(indexPath, .topFiveMovie)
     }
 
 }

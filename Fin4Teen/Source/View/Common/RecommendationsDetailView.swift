@@ -10,7 +10,8 @@ import UIKit
 class RecommendationsDetailView: UIView, ViewCodeContract {
     
     // MARK: - Properties
-    let alphaValue: CGFloat = 0.95
+    var urlStremming: String = ""
+    let alphaValue: CGFloat = 0.98
     
     // MARK: - Init
     override init(frame: CGRect) {
@@ -27,6 +28,17 @@ class RecommendationsDetailView: UIView, ViewCodeContract {
         super.layoutSubviews()
         setupView()
     }
+    
+    private lazy var buttonsStackView: UIStackView = {
+        let stack = UIStackView()
+        stack.backgroundColor = .white
+        stack.roundCorners(cornerRadius: 10)
+        stack.alignment = .fill
+        stack.distribution = .fillEqually
+        stack.spacing = 30
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        return stack
+    }()
 
     private lazy var scrollView: UIScrollView = {
         let scroll = UIScrollView(frame: .zero)
@@ -51,6 +63,7 @@ class RecommendationsDetailView: UIView, ViewCodeContract {
     private lazy var posterView: UIImageView = {
         let image = UIImageView()
         image.backgroundColor = .setColor(.grayDarkHigh)
+        image.isOpaque = false
         image.roundCorners(cornerRadius: 7)
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
@@ -81,25 +94,52 @@ class RecommendationsDetailView: UIView, ViewCodeContract {
         return label
     }()
     
-//    private lazy var likeButton: FTNButtonIcon = {
-//        let button = FTNButtonIcon(image: .icon(.heart),
-//                                   backgroundColor: .clear,
-//                                   colorButton: .setColor(.whiteStandart),
-//                                   accessibility: "Curtir",
-//                                   switchColor: true,
-//                                   selectedColor: .systemRed,
-//                                   action: { [weak self] in
-//            print("LIKE TAPPED")
-//        })
-//        button.translatesAutoresizingMaskIntoConstraints = false
-//        return button
-//    }()
+    private lazy var durationLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.teenMediumFont.withSize(13)
+        label.textColor = UIColor.setColor(.grayDarkest)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
+    private lazy var netFlix: FTNButtonIcon = {
+        let button = FTNButtonIcon(image: .icon(.netflix),
+                                   backgroundColor: .clear,
+                                   accessibility: "netflix",
+                                   action: { [weak self] in
+            
+            ApplicationWeb.shared.open(url: self?.urlStremming ?? "https://www.netflix.com")
+        })
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    private lazy var amazon: FTNButtonIcon = {
+        let button = FTNButtonIcon(image: .icon(.prime),
+                                   backgroundColor: .clear,
+                                   accessibility: "prime vídeo",
+                                   action: { [weak self] in
+            print("LIKE TAPPED")
+        })
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    private lazy var appleTvButton: FTNButtonIcon = {
+        let button = FTNButtonIcon(image: .icon(.appleTv),
+                                   backgroundColor: .clear,
+                                   accessibility: "apple tv",
+                                   action: { [weak self] in
+            print("apple TAPPED")
+        })
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
 
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont.teenMediumFont.withSize(15)
         label.textColor = UIColor.setColor(.grayLight)
-        label.backgroundColor = .clear
         label.numberOfLines = .zero
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -116,7 +156,9 @@ class RecommendationsDetailView: UIView, ViewCodeContract {
         containerView.addSubview(titleLabel)
         containerView.addSubview(descriptionLabel)
         containerView.addSubview(releaseLabel)
-//        containerView.addSubview(likeButton)
+        containerView.addSubview(durationLabel)
+        containerView.addSubview(netFlix)
+
     }
     
     func setupConstraints() {
@@ -161,26 +203,57 @@ class RecommendationsDetailView: UIView, ViewCodeContract {
             .leftAnchor(in: posterView, attribute: .right, padding: 15)
             .rightAnchor(in: containerView)
         
-//        likeButton
-//            .topAnchor(in: releaseLabel, attribute: .bottom, padding: 30)
-//            .leftAnchor(in: posterView, attribute: .right, padding: 15)
-//            .heightAnchor(25)
-//            .widthAnchor(25)
+        durationLabel
+            .topAnchor(in: releaseLabel, attribute: .bottom, padding: 10)
+            .leftAnchor(in: posterView, attribute: .right, padding: 15)
+            .rightAnchor(in: containerView)
         
         descriptionLabel
             .topAnchor(in: posterView, attribute: .bottom, padding: 25)
             .leftAnchor(in: containerView, padding: 15)
             .rightAnchor(in: containerView, padding: 15)
+        
+        netFlix
+            .topAnchor(in: descriptionLabel, attribute: .bottom, padding: 30)
+            .leftAnchor(in: containerView, padding: 15)
+            .heightAnchor(60)
+            .widthAnchor(65)
+            .bottomAnchor(in: containerView, padding: 200)
+  
     }
     
     // MARK: Bind model - view
-    func bind(indexPath: IndexPath, value: [Movie]) {
-        let model = value[indexPath.row]
-
+    func bind(indexPath: IndexPath, movies: [Movie]) {
+        let model = movies[indexPath.row]
         self.posterView.load(urlString: model.url_poster)
         self.titleLabel.text = model.title
         self.descriptionLabel.text = model.description
         self.releaseLabel.text = model.release
+        self.durationLabel.text = model.duration
+        
+    }
+    
+    func bind(indexPath: IndexPath, books: [Book]) {
+        let model = books[indexPath.row]
+        self.posterView.load(urlString: model.url_poster ?? "")
+        self.titleLabel.text = model.title
+        self.descriptionLabel.text = model.description
+        self.releaseLabel.text = model.release
+        self.durationLabel.text = model.pageCount
+        
+    }
+    
+    func bind(indexPath: IndexPath, tvShows: [Tvshow]) {
+        let model = tvShows[indexPath.row]
+        self.posterView.load(urlString: model.url_poster)
+        self.titleLabel.text = model.title
+        self.descriptionLabel.text = model.description
+        self.releaseLabel.text = model.release
+        self.durationLabel.text = model.duration
+    }
+    
+    func shouldDisplayStreamingButton(show: Bool) {
+        netFlix.isHidden = show.not
     }
 
 }

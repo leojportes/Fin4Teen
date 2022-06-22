@@ -9,6 +9,13 @@ import UIKit
 
 final class BooksCollectionView: UIView, ViewCodeContract {
     
+    var showDetailView: ((IndexPath, TypeRec) -> Void)?
+    var booksList: [Book] = [] {
+        didSet {
+            self.collectionView?.reloadData()
+        }
+    }
+    
     // MARK: - Init
     
     override init(frame: CGRect) {
@@ -104,17 +111,19 @@ extension BooksCollectionView: UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return booksList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecommendationsCollectionViewCell.identifier, for: indexPath)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecommendationsCollectionViewCell.identifier, for: indexPath) as? RecommendationsCollectionViewCell else { return UICollectionViewCell() }
         
+        let books = booksList[indexPath.row]
+        cell.setupCell(image: books.url_poster ?? "")
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("tapped livros")
+        self.showDetailView?(indexPath, .book)
     }
     
 }

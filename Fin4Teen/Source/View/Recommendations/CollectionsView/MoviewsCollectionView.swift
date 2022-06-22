@@ -9,6 +9,13 @@ import UIKit
 
 final class MoviesCollectionView: UIView, ViewCodeContract {
     
+    var showDetailView: ((IndexPath, TypeRec) -> Void)?
+    var movieList: [Movie] = [] {
+        didSet {
+            self.collectionView?.reloadData()
+        }
+    }
+    
     // MARK: - Init
     
     override init(frame: CGRect) {
@@ -105,17 +112,18 @@ extension MoviesCollectionView: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return movieList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecommendationsCollectionViewCell.identifier, for: indexPath) as? RecommendationsCollectionViewCell else { return UICollectionViewCell() }
-       
+        let movies = movieList[indexPath.row]
+        cell.setupCell(image: movies.url_poster)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("tapped livros")
+        self.showDetailView?(indexPath, .movie)
     }
     
 }

@@ -42,11 +42,16 @@ final class FTNButtonIcon: UIButton {
         self.selectedColor = selectedColor ?? .white
         self.initialColor = colorButton ?? .white
         
-        let image = image
-        let tintedImage = image?.withRenderingMode(.alwaysTemplate)
-        self.setImage(tintedImage, for: .normal)
+        if colorButton != nil {
+            let image = image
+            let tintedImage = image?.withRenderingMode(.alwaysTemplate)
+            self.setImage(tintedImage, for: .normal)
+            self.tintColor = colorButton
+        } else {
+            self.setImage(image, for: .normal)
+        }
         
-        self.tintColor = colorButton
+        self.translatesAutoresizingMaskIntoConstraints = false
         self.addTarget(nil, action: #selector(didTapButton), for: .touchUpInside)
         self.didTap = action
     }

@@ -29,21 +29,20 @@ final class RecommendationsViewController: UIViewController, FTNCoordinatedViewC
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view = customView
-       
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setupCustomView()
         customView.topFiveHeaderView.collectionView?.reloadData()
         viewModel?.input.viewDidLoad()
         bindProperties()
-        view.backgroundColor = .systemYellow
+        setupCustomView()
+        view.backgroundColor = .black
     }
 
-    func showDetailView(indexPath: IndexPath) {
-        coordinator?.eventOccurred(with: .showRecommendationDetail(selectedIndex: indexPath))
+    func showDetailView(indexPath: IndexPath, typeRec: TypeRec) {
+        coordinator?.eventOccurred(with: .showRecommendationDetail(selectedIndex: indexPath, typeRec: typeRec))
     }
 
     private func didTapBack() {
@@ -52,24 +51,29 @@ final class RecommendationsViewController: UIViewController, FTNCoordinatedViewC
     
     private func setupCustomView() {
         customView.setup(backAction: { [weak self] in
-            self?.didTapBack() },
-                         showDetailView: { indexPath in
-            
-            print(indexPath.row)
-            self.showDetailView(indexPath: indexPath) }
+            self?.didTapBack()},
+                         showDetailView: { indexPath, type in
+            self.showDetailView(indexPath: indexPath, typeRec: type) }
         )
     }
 
     private func bindProperties() {
-        viewModel?.output.movies.bind(skip: true) { result in
-            self.customView.bindMovies(value: result)
+        viewModel?.output.topFive.bind(skip: true) { movies in
+            self.customView.bindTopFive(value: movies)
         }
         
-        viewModel?.output.books.bind(skip: true) { result in
+        viewModel?.output.movies.bind(skip: true) { movies in
+            self.customView.bindMovies(value: movies)
         }
         
-        viewModel?.output.tvshows.bind(skip: true) { result in
+        viewModel?.output.tvshows.bind(skip: true) { tvshows in
+            self.customView.bindTvShows(value: tvshows)
         }
+        
+        viewModel?.output.books.bind(skip: true) { books in
+            self.customView.bindBooks(value: books)
+        }
+       
     }
     
 }

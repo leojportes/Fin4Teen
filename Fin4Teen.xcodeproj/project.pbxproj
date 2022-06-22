@@ -99,7 +99,6 @@
 		C0BDFC41285680D400BE4040 /* RecommendationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BDFC40285680D400BE4040 /* RecommendationsViewModel.swift */; };
 		C0E7D8662856528300CC4F1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E7D8652856528300CC4F1C /* AppDelegate.swift */; };
 		C0E7D8682856528300CC4F1C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E7D8672856528300CC4F1C /* SceneDelegate.swift */; };
-		C0E7D86A2856528300CC4F1C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E7D8692856528300CC4F1C /* ViewController.swift */; };
 		C0E7D8722856528400CC4F1C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0E7D8702856528400CC4F1C /* LaunchScreen.storyboard */; };
 		C0E7D87B285653CD00CC4F1C /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E7D87A285653CD00CC4F1C /* Bindable.swift */; };
 		F23FC0175B5090C48917086C /* Pods_Fin4Teen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95415546945DB25EC2339FF5 /* Pods_Fin4Teen.framework */; };
@@ -201,7 +200,6 @@
 		C0E7D8622856528300CC4F1C /* Fin4Teen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fin4Teen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0E7D8652856528300CC4F1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C0E7D8672856528300CC4F1C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C0E7D8692856528300CC4F1C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C0E7D8712856528400CC4F1C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C0E7D8732856528400CC4F1C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C0E7D87A285653CD00CC4F1C /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
@@ -268,6 +266,7 @@
 		C0BDFB6A285656B600BE4040 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				C0BDFBB62856608C00BE4040 /* Coordinator */,
 				C0B5D204285AE267009CD075 /* Constants */,
 				C0BDFC25285676F100BE4040 /* Fonts */,
 				C0BDFBA128565BD200BE4040 /* Enums */,
@@ -371,7 +370,8 @@
 				C0BDFBB72856609600BE4040 /* FTNCoordinator.swift */,
 				C0BDFBB9285660B900BE4040 /* MainCoordinator.swift */,
 			);
-			path = Coordinator;
+			name = Coordinator;
+			path = ../Coordinator;
 			sourceTree = "<group>";
 		};
 		C0BDFBBB285660CE00BE4040 /* Login */ = {
@@ -387,7 +387,6 @@
 			children = (
 				C0BDFBC12856628200BE4040 /* Model */,
 				C0BDFBC72856644600BE4040 /* View */,
-				C0BDFC1428566F3100BE4040 /* ViewModel */,
 				C0BDFBC22856629B00BE4040 /* Service */,
 			);
 			path = Source;
@@ -472,6 +471,7 @@
 		C0BDFBE328566AD600BE4040 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				C0BDFC1428566F3100BE4040 /* ViewModel */,
 				C0BDFBE428566AE100BE4040 /* HomeView.swift */,
 				C0BDFBE628566B2800BE4040 /* HomeNewsTableViewCell.swift */,
 				C0BDFBE828566B3F00BE4040 /* HomeViewController.swift */,
@@ -624,13 +624,11 @@
 		C0E7D8642856528300CC4F1C /* Fin4Teen */ = {
 			isa = PBXGroup;
 			children = (
-				C0BDFBB62856608C00BE4040 /* Coordinator */,
 				C0BDFB762856578700BE4040 /* Resource */,
 				C0BDFBC02856627D00BE4040 /* Source */,
 				C0E7D8652856528300CC4F1C /* AppDelegate.swift */,
 				C0BDFC19285670E600BE4040 /* Assets.xcassets */,
 				C0E7D8672856528300CC4F1C /* SceneDelegate.swift */,
-				C0E7D8692856528300CC4F1C /* ViewController.swift */,
 				C0E7D8702856528400CC4F1C /* LaunchScreen.storyboard */,
 				C0E7D8732856528400CC4F1C /* Info.plist */,
 				C0BDFBB228565FC500BE4040 /* GoogleService-Info.plist */,
@@ -800,7 +798,6 @@
 				C0BDFBEE28566B8400BE4040 /* LoginViewController.swift in Sources */,
 				C0BDFC1628566F3D00BE4040 /* HomeViewModel.swift in Sources */,
 				C0BDFBF828566C8500BE4040 /* OnboardingViewController.swift in Sources */,
-				C0E7D86A2856528300CC4F1C /* ViewController.swift in Sources */,
 				C0BDFBF128566BA900BE4040 /* MenuView.swift in Sources */,
 				C0E7D8662856528300CC4F1C /* AppDelegate.swift in Sources */,
 				C0BDFBB128565E2F00BE4040 /* FTNColors.swift in Sources */,

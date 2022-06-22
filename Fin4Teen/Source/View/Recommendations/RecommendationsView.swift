@@ -89,8 +89,28 @@ class RecommendationsView: UIView, ViewCodeContract {
         return view
     }()
 
+    // MARK: - Bind
+    
+    /// Top five movies
+    func bindTopFive(value: [Movie]) {
+       
+        topFiveHeaderView.topFiveMovieList = value
+    }
+    
+    /// Movies
     func bindMovies(value: [Movie]) {
-        topFiveHeaderView.movieList = value
+        moviesCollectionView.movieList = value
+    }
+    
+    /// Books
+    func bindBooks(value: [Book]) {
+        print(value)
+        booksCollectionView.booksList = value
+    }
+    
+    /// Tvshows
+    func bindTvShows(value: [Tvshow]) {
+        seriesTvCollectionView.tvShowList = value
     }
 
     // MARK: - Setup viewcode
@@ -163,8 +183,6 @@ class RecommendationsView: UIView, ViewCodeContract {
             .rightAnchor(in: containerView, padding: 20)
             .bottomAnchor(in: containerView, padding: 30)
             .heightAnchor(75)
-        
-
     }
     
     lazy var viewExemple: UIView = {
@@ -175,9 +193,12 @@ class RecommendationsView: UIView, ViewCodeContract {
         return view
     }()
 
-    func setup(backAction: @escaping Action, showDetailView: ((IndexPath) -> Void)?) {
+    func setup(backAction: @escaping Action, showDetailView: ((IndexPath, TypeRec) -> Void)?) {
         self.didTapBack = backAction
         self.topFiveHeaderView.showDetailView = showDetailView
+        self.moviesCollectionView.showDetailView = showDetailView
+        self.booksCollectionView.showDetailView = showDetailView
+        self.seriesTvCollectionView.showDetailView = showDetailView
     }
     
 }

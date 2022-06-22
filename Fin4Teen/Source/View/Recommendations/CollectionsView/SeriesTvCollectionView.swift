@@ -8,8 +8,14 @@
 import UIKit
 
 final class SeriesTvCollectionView: UIView, ViewCodeContract {
-    
-    
+
+    var showDetailView: ((IndexPath, TypeRec) -> Void)?
+    var tvShowList: [Tvshow] = [] {
+        didSet {
+            self.collectionView?.reloadData()
+        }
+    }
+
     // MARK: - Init
     
     override init(frame: CGRect) {
@@ -20,9 +26,6 @@ final class SeriesTvCollectionView: UIView, ViewCodeContract {
         super.layoutSubviews()
         setupView()
         setupCollectionView()
-        
-        let indexPath = IndexPath(row: 5 / 2, section: 0)
-        collectionView?.scrollToItem(at: indexPath, at: .left, animated: false)
     }
     
     required init?(coder: NSCoder) {
@@ -109,17 +112,18 @@ extension SeriesTvCollectionView: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return tvShowList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecommendationsCollectionViewCell.identifier, for: indexPath)
-        
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecommendationsCollectionViewCell.identifier, for: indexPath) as? RecommendationsCollectionViewCell else { return UICollectionViewCell() }
+        let tvshows = tvShowList[indexPath.row]
+        cell.setupCell(image: tvshows.url_poster)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("tapped series")
+        self.showDetailView?(indexPath, .tvshows)
     }
     
 }

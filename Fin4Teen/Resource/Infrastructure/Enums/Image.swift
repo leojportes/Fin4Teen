@@ -24,7 +24,9 @@ enum Image: String {
     case ArrowDiagonal = "img_arrow_diagonal"
     case heartRed = "heartRed"
     case heart = "heart"
-
+    case prime = "prime"
+    case appleTv = "apple-tv"
+    case netflix = "netflix"
     // MARK: - Numbers images
     
     case one = "img_one"

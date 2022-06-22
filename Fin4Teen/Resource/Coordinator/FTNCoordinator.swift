@@ -51,7 +51,7 @@ enum Event {
     
     // MARK: - Recommendations
     
-    case showRecommendationDetail(selectedIndex: IndexPath)
+    case showRecommendationDetail(selectedIndex: IndexPath, typeRec: TypeRec)
 }
 
 protocol FTNCoordinator {

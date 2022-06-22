@@ -15,16 +15,18 @@ class RecommendationsDetailViewController: UIViewController, FTNCoordinatedViewC
     // MARK: Properties
     var coordinator: FTNCoordinator?
     private var indexPath: IndexPath?
+    private var type: TypeRec?
     
     // MARK: - Private properties
     private let service: FTNServiceProtocol = FTNService()
     private var viewModel: RecommendationsViewModelProtocol?
     
     // MARK: - Initializer
-    static func instantiate(with viewModel: RecommendationsViewModelProtocol = RecommendationsViewModel(), indexPath: IndexPath) -> RecommendationsDetailViewController {
+    static func instantiate(with viewModel: RecommendationsViewModelProtocol = RecommendationsViewModel(), indexPath: IndexPath, type: TypeRec) -> RecommendationsDetailViewController {
         let controller = RecommendationsDetailViewController()
         controller.indexPath = indexPath
         controller.viewModel = viewModel
+        controller.type = type
         return controller
     }
     
@@ -43,9 +45,36 @@ class RecommendationsDetailViewController: UIViewController, FTNCoordinatedViewC
     }
     
     private func bindProperties() {
-        viewModel?.output.movies.bind(skip: true) { result in
-            guard let indexPath = self.indexPath else { return }
-            self.customView.bind(indexPath: indexPath, value: result)
+        switch type {
+        case .movie:
+            viewModel?.output.movies.bind(skip: true) { result in
+                guard let indexPath = self.indexPath else { return }
+                
+                self.customView.bind(indexPath: indexPath, movies: result)
+            }
+            
+        case .topFiveMovie:
+            viewModel?.output.topFive.bind(skip: true) { result in
+                guard let indexPath = self.indexPath else { return }
+                self.customView.bind(indexPath: indexPath, movies: result)
+                print(result[indexPath.row].url_netflix)
+                self.customView.urlStremming = result[indexPath.row].url_netflix
+            }
+            
+        case .book:
+            viewModel?.output.books.bind(skip: true) { result in
+                guard let indexPath = self.indexPath else { return }
+                self.customView.bind(indexPath: indexPath, books: result)
+                self.customView.shouldDisplayStreamingButton(show: false)
+            }
+            
+        case .tvshows:
+            viewModel?.output.tvshows.bind(skip: true) { result in
+                guard let indexPath = self.indexPath else { return }
+                self.customView.bind(indexPath: indexPath, tvShows: result)
+            }
+        case .none:
+            break
         }
     }
 

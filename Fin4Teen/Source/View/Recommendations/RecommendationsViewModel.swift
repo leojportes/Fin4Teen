@@ -12,6 +12,7 @@ protocol RecommendationsViewModelOutputProtocol {
     var movies: Bindable<[Movie]> { get }
     var books: Bindable<[Book]> { get }
     var tvshows: Bindable<[Tvshow]> { get }
+    var topFive: Bindable<[Movie]> { get }
 }
 
 protocol  RecommendationsViewModelInputProtocol {
@@ -31,6 +32,7 @@ final class RecommendationsViewModel: RecommendationsViewModelOutputProtocol {
     var movies: Bindable<[Movie]> = .init([])
     var books: Bindable<[Book]> = .init([])
     var tvshows: Bindable<[Tvshow]> = .init([])
+    var topFive: Bindable<[Movie]> = .init([])
     
     // MARK: - Init
     init(service: FTNServiceProtocol = FTNService()) {
@@ -38,6 +40,16 @@ final class RecommendationsViewModel: RecommendationsViewModelOutputProtocol {
     }
     
     // MARK: - Private methods
+    
+    /// Fetch top five movies data from API
+    private func fetchTopFive() {
+        service.fetchTopFive { result in
+            DispatchQueue.main.async {
+                print(result)
+                self.topFive.value = result
+            }
+        }
+    }
     
     /// Fetch movies data from API
     private func fetchMovies() {
@@ -70,7 +82,10 @@ final class RecommendationsViewModel: RecommendationsViewModelOutputProtocol {
 
 extension RecommendationsViewModel: RecommendationsViewModelInputProtocol {
     func viewDidLoad() {
+        fetchTopFive()
         fetchMovies()
+        fetchTvShows()
+        fetchBooks()
     }
 }
 

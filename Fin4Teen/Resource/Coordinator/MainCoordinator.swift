@@ -70,8 +70,8 @@ class MainCoordinator: FTNCoordinator {
             self.navigateToStockExchange()
         case .curiosities:
             self.navigateToCuriosities()
-        case .showRecommendationDetail(let indexPath):
-            self.showRecommendationDetail(indexPath: indexPath)
+        case .showRecommendationDetail(let indexPath, let typeRec):
+            self.showRecommendationDetail(indexPath: indexPath, typeRec: typeRec)
         }
         
     }
@@ -203,8 +203,8 @@ class MainCoordinator: FTNCoordinator {
         navigationController?.pushViewController(controller, animated: true)
     }
 
-    private func showRecommendationDetail(indexPath: IndexPath) {
-        var controller: UIViewController & FTNCoordinatedViewController = RecommendationsDetailViewController.instantiate(indexPath: indexPath)
+    private func showRecommendationDetail(indexPath: IndexPath, typeRec: TypeRec) {
+        var controller: UIViewController & FTNCoordinatedViewController = RecommendationsDetailViewController.instantiate(indexPath: indexPath, type: typeRec)
         controller.coordinator = self
         navigationController?.present(controller, animated: true)
     }

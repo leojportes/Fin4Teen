@@ -11,9 +11,27 @@ protocol FTNServiceProtocol {
     func fetchMovies(completion: @escaping ([Movie]) -> Void)
     func fetchBooks(completion: @escaping ([Book]) -> Void)
     func fetchTvshows(completion: @escaping ([Tvshow]) -> Void)
+    func fetchTopFive(completion: @escaping ([Movie]) -> Void)
 }
 
 final class FTNService: FTNServiceProtocol {
+    
+    func fetchTopFive(completion: @escaping ([Movie]) -> Void) {
+        guard let url = URL(string: StringConstants.Api.topFive) else { return }
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard let data = data else { return }
+            do {
+                let postsData = try JSONDecoder().decode(TopFive.self, from: data)
+                DispatchQueue.main.async {
+                    completion(postsData.topFive)
+                }
+            }
+            catch {
+                let error = error
+                print(error)
+            }
+        }.resume()
+    }
     
     func fetchMovies(completion: @escaping ([Movie]) -> Void) {
         guard let url = URL(string: StringConstants.Api.movies) else { return }
