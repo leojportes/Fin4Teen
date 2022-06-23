@@ -47,7 +47,7 @@ class RecommendationsView: UIView, ViewCodeContract {
         })
         view.set(title: "Recomendações",
                  color: UIColor.setColor(.grayLight),
-                 font: UIFont.teenRegularFont.withSize(18))
+                 font: UIFont.teenRegularFont.withSize(16))
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -104,7 +104,6 @@ class RecommendationsView: UIView, ViewCodeContract {
     
     /// Books
     func bindBooks(value: [Book]) {
-        print(value)
         booksCollectionView.booksList = value
     }
     
@@ -123,7 +122,7 @@ class RecommendationsView: UIView, ViewCodeContract {
         containerView.addSubview(moviesCollectionView)
         containerView.addSubview(booksCollectionView)
         containerView.addSubview(seriesTvCollectionView)
-        containerView.addSubview(viewExemple)
+        containerView.addSubview(bannerContentView)
         containerView.addSubview(topFiveHeaderView)
     }
     
@@ -177,17 +176,17 @@ class RecommendationsView: UIView, ViewCodeContract {
             .rightAnchor(in: containerView)
             .heightAnchor(240)
         
-        viewExemple
+        bannerContentView
             .topAnchor(in: booksCollectionView, attribute: .bottom, padding: 30)
-            .leftAnchor(in: containerView, padding: 20)
-            .rightAnchor(in: containerView, padding: 20)
+            .leftAnchor(in: containerView, padding: 15)
+            .rightAnchor(in: containerView, padding: 15)
             .bottomAnchor(in: containerView, padding: 30)
-            .heightAnchor(75)
+            .heightAnchor(110)
     }
     
-    lazy var viewExemple: UIView = {
-        let view = UIView()
-        view.backgroundColor = UIColor.setColor(.grayDarkest)
+    lazy var bannerContentView: FTNBannerView = {
+        let view = FTNBannerView()
+        view.setup(image: UIImage(named: Image.bannerContent.rawValue), action: { print("BANNER TAPPED") })
         view.roundCorners(cornerRadius: 10)
         view.translatesAutoresizingMaskIntoConstraints = false
         return view

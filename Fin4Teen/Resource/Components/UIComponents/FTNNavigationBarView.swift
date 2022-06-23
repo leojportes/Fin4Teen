@@ -38,6 +38,12 @@ final class FTNNavigationBarView: UIView, ViewCodeContract {
         fatalError("init(coder:) has not been implemented")
     }
     
+    private lazy var backButtonView: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
     private lazy var backButton: UIButton = {
         let view = UIButton()
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -62,21 +68,28 @@ final class FTNNavigationBarView: UIView, ViewCodeContract {
     // MARK: - Methods viewcode
     
     func setupHierarchy() {
-        self.addSubview(backButton)
+        self.addSubview(backButtonView)
+        backButtonView.addSubview(backButton)
         self.addSubview(titleLabel)
         self.addSubview(horizontalLine)
     }
     
     func setupConstraints() {
-        backButton
+        backButtonView
             .leftAnchor(in: self, padding: 20)
             .centerY(in: self)
-            .heightAnchor(20)
-            .widthAnchor(20)
+            .heightAnchor(30)
+            .widthAnchor(30)
+        
+        backButton
+            .leftAnchor(in: backButtonView)
+            .centerY(in: backButtonView)
+            .heightAnchor(24)
+            .widthAnchor(24)
         
         titleLabel
             .leftAnchor(in: backButton, attribute: .right, padding: 20)
-            .centerY(in: backButton)
+            .centerY(in: backButtonView)
         
         horizontalLine
             .bottomAnchor(in: self, attribute: .bottom)
@@ -88,7 +101,6 @@ final class FTNNavigationBarView: UIView, ViewCodeContract {
     func set(title: String,
              color: UIColor? = nil,
              font: UIFont? = nil) {
-        self.titleLabel.text = title
         self.titleLabel.textColor = color
         self.titleLabel.text = title
         self.titleLabel.font = font

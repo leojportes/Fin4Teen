@@ -17,12 +17,11 @@ final class RecommendationsCollectionViewCell: UICollectionViewCell, ViewCodeCon
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        //contentView.backgroundColor = .red
     }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        contentView.backgroundColor = UIColor.setColor(.purpleTeen)
+        contentView.backgroundColor = UIColor.setColor(.blackColor)
         contentView.layer.cornerRadius = 5
         contentView.layer.masksToBounds = true
         setupView()

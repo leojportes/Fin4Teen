@@ -28,6 +28,7 @@ enum Image: String {
     case appleTv = "apple-tv"
     case netflix = "netflix"
     case amazon = "amazon"
+    case bannerContent = "bannerContents"
 
     // MARK: - Numbers images
     

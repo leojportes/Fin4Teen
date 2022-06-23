@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C00DC37C2863F5CB0036F986 /* FTNBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C00DC37B2863F5CB0036F986 /* FTNBannerView.swift */; };
 		C060844428600A68001CF2BD /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C060844328600A68001CF2BD /* UIImage+Extension.swift */; };
 		C0B5D206285AE291009CD075 /* StringsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B5D205285AE291009CD075 /* StringsConstants.swift */; };
 		C0B5D208285AEFD9009CD075 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B5D207285AEFD9009CD075 /* Array+Extension.swift */; };
@@ -107,6 +108,7 @@
 /* Begin PBXFileReference section */
 		62695A8A40A546810B06B816 /* Pods-Fin4Teen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Fin4Teen.release.xcconfig"; path = "Target Support Files/Pods-Fin4Teen/Pods-Fin4Teen.release.xcconfig"; sourceTree = "<group>"; };
 		95415546945DB25EC2339FF5 /* Pods_Fin4Teen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Fin4Teen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C00DC37B2863F5CB0036F986 /* FTNBannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTNBannerView.swift; sourceTree = "<group>"; };
 		C060844328600A68001CF2BD /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		C0B5D205285AE291009CD075 /* StringsConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringsConstants.swift; sourceTree = "<group>"; };
 		C0B5D207285AEFD9009CD075 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
@@ -326,6 +328,7 @@
 				C0BDFB9D28565B7D00BE4040 /* FTNViewAction.swift */,
 				C0BDFBE12856669C00BE4040 /* FTNNavigationBarView.swift */,
 				C0BDFC1728566F7900BE4040 /* FTNSpinningCircleView.swift */,
+				C00DC37B2863F5CB0036F986 /* FTNBannerView.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -850,6 +853,7 @@
 				C0BDFB8F2856599A00BE4040 /* UIView+RawAnchors.swift in Sources */,
 				C0B5D3D5285BDE23009CD075 /* RecommendationsDetailViewController.swift in Sources */,
 				C0BDFB892856595500BE4040 /* Padding.swift in Sources */,
+				C00DC37C2863F5CB0036F986 /* FTNBannerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

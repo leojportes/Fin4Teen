@@ -43,7 +43,7 @@ class ContentsHomeView: UIView, ViewCodeContract {
                                          })
         view.set(title: "Conteúdos",
                  color: UIColor.setColor(.blackColor),
-                 font: UIFont.teenRegularFont.withSize(18))
+                 font: UIFont.teenRegularFont.withSize(16))
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()

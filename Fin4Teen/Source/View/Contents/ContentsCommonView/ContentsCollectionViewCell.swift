@@ -21,9 +21,7 @@ final class ContentsCollectionViewCell: UICollectionViewCell, ViewCodeContract {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        contentView.backgroundColor = UIColor.setColor(.grayDarkest)
-        contentView.layer.cornerRadius = 5
-        contentView.layer.masksToBounds = true
+        contentView.backgroundColor = UIColor.setColor(.whiteStandart)
         setupView()
     }
     
@@ -32,6 +30,14 @@ final class ContentsCollectionViewCell: UICollectionViewCell, ViewCodeContract {
     }
 
     // MARK: - Viewcode
+    
+    private lazy var baseView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .black
+        view.roundCorners(cornerRadius: 10)
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
     private lazy var imageView: UIImageView = {
         let image = UIImageView()
@@ -42,16 +48,23 @@ final class ContentsCollectionViewCell: UICollectionViewCell, ViewCodeContract {
     // MARK: - Setup viewcode
     
     func setupHierarchy() {
-        contentView.addSubview(imageView)
+        self.addSubview(baseView)
+        baseView.addSubview(imageView)
     }
     
     func setupConstraints() {
+        baseView
+            .topAnchor(in: self)
+            .leftAnchor(in: self, padding: 5)
+            .rightAnchor(in: self, padding: 5)
+            .bottomAnchor(in: self)
+        
         imageView
-            .pin(toEdgesOf: contentView)
+            .pin(toEdgesOf: baseView)
         
     }
     
-    public func setupCell(image: UIImage? = nil, topFive: UIImage? = nil) {
+    public func setupCell(image: UIImage? = nil) {
         imageView.image = image
     }
     
