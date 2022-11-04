@@ -13,6 +13,10 @@
 		C0B5D208285AEFD9009CD075 /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B5D207285AEFD9009CD075 /* Array+Extension.swift */; };
 		C0B5D3D3285BD8F1009CD075 /* RecommendationsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B5D3D2285BD8F1009CD075 /* RecommendationsDetailView.swift */; };
 		C0B5D3D5285BDE23009CD075 /* RecommendationsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B5D3D4285BDE23009CD075 /* RecommendationsDetailViewController.swift */; };
+		C0B6203C2914CAE300CA2B10 /* FNTDurationBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B6203B2914CAE300CA2B10 /* FNTDurationBadge.swift */; };
+		C0B6203E2914CEDA00CA2B10 /* ContentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B6203D2914CEDA00CA2B10 /* ContentDetailView.swift */; };
+		C0B620402914CEEC00CA2B10 /* ContentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B6203F2914CEEC00CA2B10 /* ContentDetailViewController.swift */; };
+		C0B6204529158CD800CA2B10 /* ContentsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0B6204429158CD800CA2B10 /* ContentsModel.swift */; };
 		C0BDFB6C285656CF00BE4040 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BDFB6B285656CF00BE4040 /* BaseCoordinator.swift */; };
 		C0BDFB6E285656E900BE4040 /* CoordinatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BDFB6D285656E900BE4040 /* CoordinatedViewController.swift */; };
 		C0BDFB702856571C00BE4040 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BDFB6F2856571C00BE4040 /* Coordinator.swift */; };
@@ -48,7 +52,6 @@
 		C0BDFBB328565FC500BE4040 /* GoogleService-Info.plist in Sources */ = {isa = PBXBuildFile; fileRef = C0BDFBB228565FC500BE4040 /* GoogleService-Info.plist */; };
 		C0BDFBB82856609600BE4040 /* FTNCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BDFBB72856609600BE4040 /* FTNCoordinator.swift */; };
 		C0BDFBBA285660B900BE4040 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BDFBB9285660B900BE4040 /* MainCoordinator.swift */; };
-		C0BDFBBD2856617700BE4040 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BDFBBC2856617700BE4040 /* HomeCoordinator.swift */; };
 		C0BDFBBF2856626500BE4040 /* NewsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BDFBBE2856626500BE4040 /* NewsModel.swift */; };
 		C0BDFBC4285662AD00BE4040 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BDFBC3285662AD00BE4040 /* NetworkError.swift */; };
 		C0BDFBC6285662CB00BE4040 /* ServiceNews.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0BDFBC5285662CB00BE4040 /* ServiceNews.swift */; };
@@ -114,6 +117,10 @@
 		C0B5D207285AEFD9009CD075 /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		C0B5D3D2285BD8F1009CD075 /* RecommendationsDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsDetailView.swift; sourceTree = "<group>"; };
 		C0B5D3D4285BDE23009CD075 /* RecommendationsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendationsDetailViewController.swift; sourceTree = "<group>"; };
+		C0B6203B2914CAE300CA2B10 /* FNTDurationBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FNTDurationBadge.swift; sourceTree = "<group>"; };
+		C0B6203D2914CEDA00CA2B10 /* ContentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDetailView.swift; sourceTree = "<group>"; };
+		C0B6203F2914CEEC00CA2B10 /* ContentDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDetailViewController.swift; sourceTree = "<group>"; };
+		C0B6204429158CD800CA2B10 /* ContentsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsModel.swift; sourceTree = "<group>"; };
 		C0BDFB6B285656CF00BE4040 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		C0BDFB6D285656E900BE4040 /* CoordinatedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatedViewController.swift; sourceTree = "<group>"; };
 		C0BDFB6F2856571C00BE4040 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -149,7 +156,6 @@
 		C0BDFBB228565FC500BE4040 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C0BDFBB72856609600BE4040 /* FTNCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FTNCoordinator.swift; sourceTree = "<group>"; };
 		C0BDFBB9285660B900BE4040 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
-		C0BDFBBC2856617700BE4040 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
 		C0BDFBBE2856626500BE4040 /* NewsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsModel.swift; sourceTree = "<group>"; };
 		C0BDFBC3285662AD00BE4040 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		C0BDFBC5285662CB00BE4040 /* ServiceNews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceNews.swift; sourceTree = "<group>"; };
@@ -254,9 +260,19 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		C0B620412914CEF100CA2B10 /* ContentDetails */ = {
+			isa = PBXGroup;
+			children = (
+				C0B6203D2914CEDA00CA2B10 /* ContentDetailView.swift */,
+				C0B6203F2914CEEC00CA2B10 /* ContentDetailViewController.swift */,
+			);
+			path = ContentDetails;
+			sourceTree = "<group>";
+		};
 		C0BDFB69285656AC00BE4040 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				C0BDFBB72856609600BE4040 /* FTNCoordinator.swift */,
 				C0BDFB6B285656CF00BE4040 /* BaseCoordinator.swift */,
 				C0BDFB6D285656E900BE4040 /* CoordinatedViewController.swift */,
 				C0BDFB6F2856571C00BE4040 /* Coordinator.swift */,
@@ -268,7 +284,6 @@
 		C0BDFB6A285656B600BE4040 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
-				C0BDFBB62856608C00BE4040 /* Coordinator */,
 				C0B5D204285AE267009CD075 /* Constants */,
 				C0BDFC25285676F100BE4040 /* Fonts */,
 				C0BDFBA128565BD200BE4040 /* Enums */,
@@ -329,6 +344,7 @@
 				C0BDFBE12856669C00BE4040 /* FTNNavigationBarView.swift */,
 				C0BDFC1728566F7900BE4040 /* FTNSpinningCircleView.swift */,
 				C00DC37B2863F5CB0036F986 /* FTNBannerView.swift */,
+				C0B6203B2914CAE300CA2B10 /* FNTDurationBadge.swift */,
 			);
 			path = UIComponents;
 			sourceTree = "<group>";
@@ -369,20 +385,9 @@
 		C0BDFBB62856608C00BE4040 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
-				C0BDFBBB285660CE00BE4040 /* Login */,
-				C0BDFBB72856609600BE4040 /* FTNCoordinator.swift */,
 				C0BDFBB9285660B900BE4040 /* MainCoordinator.swift */,
 			);
-			name = Coordinator;
-			path = ../Coordinator;
-			sourceTree = "<group>";
-		};
-		C0BDFBBB285660CE00BE4040 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				C0BDFBBC2856617700BE4040 /* HomeCoordinator.swift */,
-			);
-			path = Login;
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		C0BDFBC02856627D00BE4040 /* Source */ = {
@@ -390,6 +395,7 @@
 			children = (
 				C0BDFBC12856628200BE4040 /* Model */,
 				C0BDFBC72856644600BE4040 /* View */,
+				C0BDFBB62856608C00BE4040 /* Coordinator */,
 				C0BDFBC22856629B00BE4040 /* Service */,
 			);
 			path = Source;
@@ -400,6 +406,7 @@
 			children = (
 				C0BDFBBE2856626500BE4040 /* NewsModel.swift */,
 				C0BDFC3A28567E4000BE4040 /* RecommendationsModel.swift */,
+				C0B6204429158CD800CA2B10 /* ContentsModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -417,7 +424,6 @@
 		C0BDFBC72856644600BE4040 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C0B5D3D1285BD89E009CD075 /* Common */,
 				C0BDFC0F28566EC700BE4040 /* SignUp */,
 				C0BDFC0B28566E7D00BE4040 /* RecoveryPass */,
 				C0BDFBF928566CF200BE4040 /* Recommendations */,
@@ -433,6 +439,7 @@
 		C0BDFBC82856644C00BE4040 /* Contents */ = {
 			isa = PBXGroup;
 			children = (
+				C0B620412914CEF100CA2B10 /* ContentDetails */,
 				C0BDFBDF2856665800BE4040 /* ContentsHomeViewController.swift */,
 				C0BDFBDD2856663B00BE4040 /* ContentsHomeView.swift */,
 				C0BDFBCB285664A000BE4040 /* ContentsCommonView */,
@@ -512,10 +519,11 @@
 		C0BDFBF928566CF200BE4040 /* Recommendations */ = {
 			isa = PBXGroup;
 			children = (
-				C0BDFBFC28566D1100BE4040 /* RecommendationsViewController.swift */,
 				C0BDFBFA28566D0700BE4040 /* RecommendationsView.swift */,
-				C0BDFBFE28566D4D00BE4040 /* CollectionsView */,
 				C0BDFC40285680D400BE4040 /* RecommendationsViewModel.swift */,
+				C0BDFBFC28566D1100BE4040 /* RecommendationsViewController.swift */,
+				C0B5D3D1285BD89E009CD075 /* Common */,
+				C0BDFBFE28566D4D00BE4040 /* CollectionsView */,
 			);
 			path = Recommendations;
 			sourceTree = "<group>";
@@ -778,6 +786,8 @@
 				C0BDFBE02856665800BE4040 /* ContentsHomeViewController.swift in Sources */,
 				C0BDFB91285659AE00BE4040 /* UIView+SafeAreaAnchors.swift in Sources */,
 				C0BDFB6C285656CF00BE4040 /* BaseCoordinator.swift in Sources */,
+				C0B6203C2914CAE300CA2B10 /* FNTDurationBadge.swift in Sources */,
+				C0B620402914CEEC00CA2B10 /* ContentDetailViewController.swift in Sources */,
 				C0BDFB9E28565B7D00BE4040 /* FTNViewAction.swift in Sources */,
 				C0BDFBA928565CAC00BE4040 /* UITextField+Extension.swift in Sources */,
 				C0BDFBB82856609600BE4040 /* FTNCoordinator.swift in Sources */,
@@ -804,6 +814,7 @@
 				C0BDFBF128566BA900BE4040 /* MenuView.swift in Sources */,
 				C0E7D8662856528300CC4F1C /* AppDelegate.swift in Sources */,
 				C0BDFBB128565E2F00BE4040 /* FTNColors.swift in Sources */,
+				C0B6204529158CD800CA2B10 /* ContentsModel.swift in Sources */,
 				C0E7D87B285653CD00CC4F1C /* Bindable.swift in Sources */,
 				C0BDFBCA2856645E00BE4040 /* AboutMoneyViewController.swift in Sources */,
 				C0BDFBCD285664BE00BE4040 /* ContentsCollectionView.swift in Sources */,
@@ -834,6 +845,7 @@
 				C0BDFB9628565AA600BE4040 /* FNTButton.swift in Sources */,
 				C0BDFC0E28566EA300BE4040 /* RecoveryPassViewController.swift in Sources */,
 				C0BDFBF628566C1600BE4040 /* OnboardingView.swift in Sources */,
+				C0B6203E2914CEDA00CA2B10 /* ContentDetailView.swift in Sources */,
 				C0BDFC0A28566E6500BE4040 /* RecoveryPassView.swift in Sources */,
 				C0BDFBD8285665A800BE4040 /* FinancialMarketViewController.swift in Sources */,
 				C0B5D3D3285BD8F1009CD075 /* RecommendationsDetailView.swift in Sources */,
@@ -849,7 +861,6 @@
 				C0B5D208285AEFD9009CD075 /* Array+Extension.swift in Sources */,
 				C0BDFB82285658CC00BE4040 /* FTNButtonIcon.swift in Sources */,
 				C0BDFC3B28567E4000BE4040 /* RecommendationsModel.swift in Sources */,
-				C0BDFBBD2856617700BE4040 /* HomeCoordinator.swift in Sources */,
 				C0BDFB8F2856599A00BE4040 /* UIView+RawAnchors.swift in Sources */,
 				C0B5D3D5285BDE23009CD075 /* RecommendationsDetailViewController.swift in Sources */,
 				C0BDFB892856595500BE4040 /* Padding.swift in Sources */,

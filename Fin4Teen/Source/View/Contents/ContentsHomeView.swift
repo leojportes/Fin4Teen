@@ -36,7 +36,6 @@ class ContentsHomeView: UIView, ViewCodeContract {
     private lazy var navigationBarView: FTNNavigationBarView = {
         let view = FTNNavigationBarView(backgroundColor: UIColor.white,
                                          colorButton: UIColor.setColor(.blackColor),
-                                         colorHorizontalLine: UIColor.setColor(.grayMedium),
                                          iconRight: UIImage(named: Image.angleLeft.rawValue),
                                          backButtonAction: { [weak self] in
                                             self?.didTapBack?()

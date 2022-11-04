@@ -9,8 +9,8 @@ import UIKit
 
 final class StockExchangeViewController: UIViewController, FTNCoordinatedViewController {
     
-    let customView = ContentsCollectionView()
-    
+    private lazy var customView = ContentsCollectionView(didTapItem: { self.coordinator?.eventOccurred(with: .contentDetail) })
+
     // MARK: - Internal properties
     
     var coordinator: FTNCoordinator?

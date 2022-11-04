@@ -9,8 +9,8 @@ import UIKit
 
 final class AboutMoneyViewController: UIViewController, FTNCoordinatedViewController {
     
-    let customView = ContentsCollectionView()
-    
+    private lazy var customView = ContentsCollectionView(didTapItem: { self.coordinator?.eventOccurred(with: .contentDetail) })
+
     // MARK: - Internal properties
     
     var coordinator: FTNCoordinator?
@@ -24,14 +24,13 @@ final class AboutMoneyViewController: UIViewController, FTNCoordinatedViewContro
         view.backgroundColor = .white
         
     }
-    
-    private func didTapBack() {
-        coordinator?.eventOccurred(with: .backAction)
-    }
-    
+
     private func setupCustomView() {
-        customView.setup(backAction: { [weak self] in
-                            self?.didTapBack() })
+        customView.setup(
+            backAction: { [weak self] in
+                self?.coordinator?.eventOccurred(with: .backAction)
+            }
+        )
     }
     
     func setupView() {

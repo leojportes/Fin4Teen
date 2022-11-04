@@ -9,7 +9,7 @@ import UIKit
 
 final class InvestimentsViewController: UIViewController, FTNCoordinatedViewController {
     
-    let customView = ContentsCollectionView()
+    private lazy var customView = ContentsCollectionView(didTapItem: { self.coordinator?.eventOccurred(with: .contentDetail) })
     
     // MARK: - Internal properties
     
@@ -23,16 +23,14 @@ final class InvestimentsViewController: UIViewController, FTNCoordinatedViewCont
         setupCustomView()
         setupView()
         view.backgroundColor = .white
-        
-    }
-    
-    private func didTapBack() {
-        coordinator?.eventOccurred(with: .backAction)
     }
     
     private func setupCustomView() {
-        customView.setup(backAction: { [weak self] in
-                            self?.didTapBack() })
+        customView.setup(
+            backAction: { [weak self] in
+                self?.coordinator?.eventOccurred(with: .backAction)
+            }
+        )
     }
     
     func setupView() {

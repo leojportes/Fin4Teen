@@ -38,13 +38,15 @@ class RecommendationsView: UIView, ViewCodeContract {
     }()
     
     private lazy var navigationBarView: FTNNavigationBarView = {
-        let view = FTNNavigationBarView(backgroundColor: UIColor.black,
-                                        colorButton: UIColor.setColor(.whiteStandart),
-                                        colorHorizontalLine: UIColor.setColor(.blackColor),
-                                        iconRight: UIImage(named: Image.angleLeft.rawValue),
-                                        backButtonAction: { [weak self] in
-            self?.didTapBack?()
-        })
+        let view = FTNNavigationBarView(
+            backgroundColor: UIColor.black,
+            colorButton: UIColor.setColor(.whiteStandart),
+            colorHorizontalLine: UIColor.setColor(.blackColor),
+            iconRight: UIImage(named: Image.angleLeft.rawValue),
+            backButtonAction: { [weak self] in
+                self?.didTapBack?()
+            }
+        )
         view.set(title: "Recomendações",
                  color: UIColor.setColor(.grayLight),
                  font: UIFont.teenRegularFont.withSize(16))
@@ -122,7 +124,7 @@ class RecommendationsView: UIView, ViewCodeContract {
         containerView.addSubview(moviesCollectionView)
         containerView.addSubview(booksCollectionView)
         containerView.addSubview(seriesTvCollectionView)
-        containerView.addSubview(bannerContentView)
+//        containerView.addSubview(bannerContentView)
         containerView.addSubview(topFiveHeaderView)
     }
     
@@ -175,22 +177,15 @@ class RecommendationsView: UIView, ViewCodeContract {
             .leftAnchor(in: containerView)
             .rightAnchor(in: containerView)
             .heightAnchor(240)
-        
-        bannerContentView
-            .topAnchor(in: booksCollectionView, attribute: .bottom, padding: 30)
-            .leftAnchor(in: containerView, padding: 15)
-            .rightAnchor(in: containerView, padding: 15)
             .bottomAnchor(in: containerView, padding: 30)
-            .heightAnchor(110)
+        
+//        bannerContentView
+//            .topAnchor(in: booksCollectionView, attribute: .bottom, padding: 30)
+//            .leftAnchor(in: containerView, padding: 15)
+//            .rightAnchor(in: containerView, padding: 15)
+//            .bottomAnchor(in: containerView, padding: 30)
+//            .heightAnchor(110)
     }
-    
-    lazy var bannerContentView: FTNBannerView = {
-        let view = FTNBannerView()
-        view.setup(image: UIImage(named: Image.bannerContent.rawValue), action: { print("BANNER TAPPED") })
-        view.roundCorners(cornerRadius: 10)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        return view
-    }()
 
     func setup(backAction: @escaping Action, showDetailView: ((IndexPath, TypeRec) -> Void)?) {
         self.didTapBack = backAction

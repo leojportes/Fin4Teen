@@ -55,6 +55,8 @@ final class FTNNavigationBarView: UIView, ViewCodeContract {
         let label = UILabel()
         label.textColor = .black
         label.translatesAutoresizingMaskIntoConstraints = false
+        label.baselineAdjustment = .alignCenters
+        label.numberOfLines = 1
         return label
     }()
     
@@ -84,12 +86,12 @@ final class FTNNavigationBarView: UIView, ViewCodeContract {
         backButton
             .leftAnchor(in: backButtonView)
             .centerY(in: backButtonView)
-            .heightAnchor(24)
-            .widthAnchor(24)
+            .heightAnchor(20)
+            .widthAnchor(20)
         
         titleLabel
-            .leftAnchor(in: backButton, attribute: .right, padding: 20)
-            .centerY(in: backButtonView)
+            .leftAnchor(in: backButton, attribute: .right, padding: 30)
+            .centerY(in: self)
         
         horizontalLine
             .bottomAnchor(in: self, attribute: .bottom)

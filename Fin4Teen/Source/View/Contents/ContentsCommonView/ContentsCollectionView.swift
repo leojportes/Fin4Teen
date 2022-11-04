@@ -11,10 +11,12 @@ final class ContentsCollectionView: UIView, ViewCodeContract {
     
     // MARK: - Properties
     var didTapBack: (() -> Void)?
+    var didTapItem: Action?
     
     // MARK: - Init
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(didTapItem: @escaping Action = { }) {
+        self.didTapItem = didTapItem
+        super.init(frame: .zero)
     }
     
     override func layoutSubviews() {
@@ -41,7 +43,7 @@ final class ContentsCollectionView: UIView, ViewCodeContract {
         layout.scrollDirection = .vertical
         layout.minimumLineSpacing = 20
         layout.itemSize = CGSize(width: self.frame.width - 20,
-                                 height: 230)
+                                 height: 100)
         collectionView = UICollectionView(frame: .zero,
                                           collectionViewLayout: layout)
         guard let collectionView = collectionView else { return }
@@ -64,7 +66,6 @@ final class ContentsCollectionView: UIView, ViewCodeContract {
     private lazy var navigationBarView: FTNNavigationBarView = {
         let view = FTNNavigationBarView(backgroundColor: UIColor.white,
                                          colorButton: UIColor.setColor(.blackColor),
-                                         colorHorizontalLine: UIColor.setColor(.grayMedium),
                                          iconRight: UIImage(named: Image.angleLeft.rawValue),
                                          backButtonAction: { [weak self] in
                                             self?.didTapBack?()
@@ -90,19 +91,19 @@ final class ContentsCollectionView: UIView, ViewCodeContract {
             .bottomAnchor(in: self, layoutOption: .useMargins)
         
         navigationBarView
-            .topAnchor(in: self)
-            .leftAnchor(in: self)
-            .rightAnchor(in: self)
+            .topAnchor(in: baseView)
+            .leftAnchor(in: baseView)
+            .rightAnchor(in: baseView)
             .heightAnchor(70)
         
         containerView
-            .topAnchor(in: baseView, padding: 60)
+            .topAnchor(in: navigationBarView, attribute: .bottom, padding: 10)
             .leftAnchor(in: baseView, padding: 10)
             .rightAnchor(in: baseView, padding: 10)
             .bottomAnchor(in: baseView)
         
         collectionView?
-            .topAnchor(in: containerView, padding: 55)
+            .topAnchor(in: containerView)
             .leftAnchor(in: containerView)
             .rightAnchor(in: containerView)
             .bottomAnchor(in: containerView)
@@ -146,7 +147,7 @@ extension ContentsCollectionView: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("tapped livros")
+        didTapItem?()
     }
     
 }

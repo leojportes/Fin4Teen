@@ -48,6 +48,7 @@ enum Event {
     case criptoCoins
     case stockExchange
     case curiosities
+    case contentDetail
     
     // MARK: - Recommendations
     
@@ -61,6 +62,6 @@ protocol FTNCoordinator {
     func start()
 }
 
-protocol FTNCoordinatedViewController {
+protocol FTNCoordinatedViewController: UIViewController {
     var coordinator: FTNCoordinator? { get set }
 }

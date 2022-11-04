@@ -18,71 +18,46 @@ class MainCoordinator: FTNCoordinator {
     // MARK: - Methods
     
     func start() {
-        var controller: UIViewController & FTNCoordinatedViewController = OnboardingViewController()
+        let controller = OnboardingViewController()
         controller.coordinator = self
         navigationController?.setViewControllers([controller], animated: true)
     }
     
+    // MARK: - Routes
     func eventOccurred(with type: Event) {
         
         switch type {
-        case .showHome:
-            self.navigateToHomeScreen()
-        case .showMenuScreen:
-            self.navigateToMenuScreen()
-        case .showContentsScreen:
-            self.navigateToContentScreen()
-        case .showAboutScreen:
-            self.navigateToAboutScreen()
-        case .showHelpScreen:
-            self.navigateTopHelpScreen()
-        case .logout:
-            self.navigateLogout()
-        case .showContactScreen:
-            break
-        case .closeAction:
-            self.closeAction()
-        case .showInsta:
-            self.navigateToInstagram()
-        case .showWeb:
-            self.navigateToWebSite()
-        case .showSignUpScreen:
-            self.navigateToSignUpScreen()
-        case .showLoginScreen:
-            self.navigateToLoginScreen()
-        case .showRecovery:
-            self.navigateToRecoveryPass()
-        case .sendRecovery:
-            self.sendRecoveryPass()
-        case .showRecommendationsScreen:
-            self.navigateToRecommandationsScreen()
-        case .backAction:
-            self.backAction()
-        case .investments:
-            self.navigateToInvestiments()
-        case .financialMarket:
-            self.navigateToFinancialMarket()
-        case .aboutMoney:
-            self.navigateToAboutMoney()
-        case .criptoCoins:
-            self.navigateToCriptoCoins()
-        case .stockExchange:
-            self.navigateToStockExchange()
-        case .curiosities:
-            self.navigateToCuriosities()
-        case .showRecommendationDetail(let indexPath, let typeRec):
-            self.showRecommendationDetail(indexPath: indexPath, typeRec: typeRec)
+        case .showHome: navigateToHomeScreen()
+        case .showMenuScreen: navigateToMenuScreen()
+        case .showContentsScreen: navigateToContentScreen()
+        case .showAboutScreen: navigateToAboutScreen()
+        case .showHelpScreen: navigateTopHelpScreen()
+        case .logout: navigateLogout()
+        case .showContactScreen: break
+        case .closeAction: closeAction()
+        case .showInsta: navigateToInstagram()
+        case .showWeb: navigateToWebSite()
+        case .showSignUpScreen: navigateToSignUpScreen()
+        case .showLoginScreen: navigateToLoginScreen()
+        case .showRecovery: navigateToRecoveryPass()
+        case .sendRecovery: sendRecoveryPass()
+        case .showRecommendationsScreen: navigateToRecommandationsScreen()
+        case .backAction: backAction()
+        case .investments: navigateToInvestiments()
+        case .financialMarket: navigateToFinancialMarket()
+        case .aboutMoney: navigateToAboutMoney()
+        case .criptoCoins: navigateToCriptoCoins()
+        case .stockExchange: navigateToStockExchange()
+        case .curiosities: navigateToCuriosities()
+        case let .showRecommendationDetail(indexPath, typeRec): showRecommendationDetail(indexPath, typeRec)
+        case .contentDetail: showContentDetailView()
         }
-        
     }
-    
-    // MARK: - Private Methods
-    
     
     // MARK: Onboarding screen
     
     private func navigateToSignUpScreen() {
-        var controller: UIViewController & FTNCoordinatedViewController = SignUpViewController()
+        let controller = SignUpViewController()
         controller.coordinator = self
         navigationController?.pushViewController(controller, animated: true)
     }
@@ -96,7 +71,7 @@ class MainCoordinator: FTNCoordinator {
     }
     
     private func navigateToLoginScreen() {
-        var controller: UIViewController & FTNCoordinatedViewController = LoginViewController()
+        let controller = LoginViewController()
         controller.coordinator = self
         navigationController?.pushViewController(controller, animated: true)
     }
@@ -104,19 +79,19 @@ class MainCoordinator: FTNCoordinator {
     // MARK: Home screen
     
     private func navigateToMenuScreen() {
-        var controller: UIViewController & FTNCoordinatedViewController = MenuViewController()
+        let controller = MenuViewController()
         controller.coordinator = self
         navigationController?.pushViewController(controller, animated: true)
     }
     
     private func navigateToContentScreen() {
-        var controller: UIViewController & FTNCoordinatedViewController = ContentsHomeViewController()
+        let controller = ContentsHomeViewController()
         controller.coordinator = self
         navigationController?.pushViewController(controller, animated: true)
     }
     
     private func navigateToRecommandationsScreen() {
-        var controller: UIViewController & FTNCoordinatedViewController = RecommendationsViewController.instantiate()
+        let controller = RecommendationsViewController.instantiate()
         controller.coordinator = self
         navigationController?.pushViewController(controller, animated: true)
     }
@@ -124,7 +99,7 @@ class MainCoordinator: FTNCoordinator {
     // MARK: Menu screen
     
     private func navigateLogout() {
-        var controller: UIViewController & FTNCoordinatedViewController = OnboardingViewController()
+        let controller = OnboardingViewController()
         controller.coordinator = self
         navigationController?.popToRootViewController(animated: false)
     }
@@ -140,13 +115,13 @@ class MainCoordinator: FTNCoordinator {
     // MARK: - Login screen
     
     private func navigateToRecoveryPass() {
-        var controller: UIViewController & FTNCoordinatedViewController = RecoveryPassViewController()
+        let controller = RecoveryPassViewController()
         controller.coordinator = self
         navigationController?.pushViewController(controller, animated: true)
     }
     
     private func navigateToHomeScreen() {
-        var controller: UIViewController & FTNCoordinatedViewController = HomeViewController.instantiate()
+        let controller = HomeViewController.instantiate()
         controller.coordinator = self
         navigationController?.pushViewController(controller, animated: true)
     }
@@ -168,43 +143,49 @@ class MainCoordinator: FTNCoordinator {
     }
     
     private func navigateToInvestiments() {
-        var controller: UIViewController & FTNCoordinatedViewController = InvestimentsViewController()
+        let controller = InvestimentsViewController()
         controller.coordinator = self
         navigationController?.pushViewController(controller, animated: true)
     }
     
     private func navigateToFinancialMarket() {
-        var controller: UIViewController & FTNCoordinatedViewController = FinancialMarketViewController()
+        let controller = FinancialMarketViewController()
         controller.coordinator = self
         navigationController?.pushViewController(controller, animated: true)
     }
     
     private func navigateToCriptoCoins() {
-        var controller: UIViewController & FTNCoordinatedViewController = CriptoCoinsViewController()
+        let controller = CriptoCoinsViewController()
         controller.coordinator = self
         navigationController?.pushViewController(controller, animated: true)
     }
     
     private func navigateToAboutMoney() {
-        var controller: UIViewController & FTNCoordinatedViewController = AboutMoneyViewController()
+        let controller = AboutMoneyViewController()
         controller.coordinator = self
         navigationController?.pushViewController(controller, animated: true)
     }
     
     private func navigateToStockExchange() {
-        var controller: UIViewController & FTNCoordinatedViewController = StockExchangeViewController()
+        let controller = StockExchangeViewController()
         controller.coordinator = self
         navigationController?.pushViewController(controller, animated: true)
     }
     
     private func navigateToCuriosities() {
-        var controller: UIViewController & FTNCoordinatedViewController = CuriositiesViewController()
+        let controller = CuriositiesViewController()
         controller.coordinator = self
         navigationController?.pushViewController(controller, animated: true)
     }
 
-    private func showRecommendationDetail(indexPath: IndexPath, typeRec: TypeRec) {
-        var controller: UIViewController & FTNCoordinatedViewController = RecommendationsDetailViewController.instantiate(indexPath: indexPath, type: typeRec)
+    private func showRecommendationDetail(_ indexPath: IndexPath, _ typeRec: TypeRec) {
+        let controller = RecommendationsDetailViewController.instantiate(indexPath: indexPath, type: typeRec)
+        controller.coordinator = self
+        navigationController?.present(controller, animated: true)
+    }
+
+    private func showContentDetailView() {
+        let controller = ContentDetailViewController()
         controller.coordinator = self
         navigationController?.present(controller, animated: true)
     }
