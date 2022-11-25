@@ -34,8 +34,6 @@
 * Aplicação foi desenvolvida em [Swift](https://www.apple.com/br/swift/) por meio da IDE Xcode.
 
 ## Possíveis Melhorias
-* <b>Expansões</b>: Adicionar sessão de programas de TV e Séries no app.<br>
-* <b>Responsividade</b>: Adequar layout responsivel para visualização em diferentes dispositivos mobile Apple.<br>
 * <b>Testes</b>: Aplicação de testes unitários.
 
 ## Build Xcode
