@@ -6,21 +6,21 @@
 
 ## Tópicos 
 
- [Descrição do projeto](#descrição-do-projeto)
+ [:book: Descrição do projeto](#descrição-do-projeto)
  
- [Construção](#construção)
+ [:wrench: Construção](#construção)
  
- [API](#API)
+ [:cloud: API](#api)
  
- [Diagramas](#diagramas)
+ [:page_facing_up: Diagramas](#diagramas)
  
- [Possíveis Melhorias](#possíveis-melhorias)
+ [:gem: Possíveis Melhorias](#possíveis-melhorias)
  
- [Build](#build)
+ [:hammer: Build Xcode](#build-xcode)
  
- [Dependências](#dependências)
+ [:open_file_folder: Dependências](#dependências)
 
- [Nossas Aplicações](#nossas-aplicações)
+ [:computer: Nossas Aplicações](#nossas-aplicações)
 
 ## Descrição do Projeto
 <b>No aplicativo, há sessões de videoaulas, recomendações, que recomenda livros, filmes, séries e programas de TV. <br>
@@ -38,7 +38,7 @@ Aplicação foi desenvolvida em [Swift](https://www.apple.com/br/swift/) por mei
 <b>Responsividade</b>: Adequar layout responsivel para visualização em diferentes dispositivos mobile Apple.<br>
 <b>Testes</b>: Aplicação de testes unitários.
 
-## Build
+## Build Xcode
 Necessário ter [Xcode](https://developer.apple.com/xcode/) instalado.
 
 ## Dependências
