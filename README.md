@@ -35,6 +35,7 @@
 
 ## Possíveis Melhorias
 * <b>Testes</b>: Aplicação de testes unitários.
+* <b>Parcerias</b>: Fechar parcerias para popular videoaulas.
 
 ## Build Xcode
 * Necessário ter [Xcode](https://developer.apple.com/xcode/) instalado.
