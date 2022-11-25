@@ -1,7 +1,5 @@
 ![Badge](https://img.shields.io/badge/Swift-FA7343?style=for-the-badge&logo=swift&logoColor=white) ![Badge](https://img.shields.io/badge/iOS-000000?style=for-the-badge&logo=Apple&logoColor=white)
 
-* [Fin4teen Web](https://leojportes.github.io/Fin4teenWeb/)
-
 # Fin4teen
 
 <b>Aplicativo de Educação Financeira para jovens.<br>
@@ -12,6 +10,8 @@
  
  [Construção](#construção)
  
+ [API/Banco de dados](#api/banco-de-dados)
+ 
  [Diagramas](#diagramas)
  
  [Possíveis Melhorias](#possíveis-melhorias)
@@ -20,11 +20,10 @@
  
  [Dependências](#dependencias)
 
+ [Nossas Aplicações](#nossas-aplicações)
+
 ## Descrição do Projeto
 <b>No aplicativo, há sessões de videoaulas, recomendações, que recomenda livros, filmes, séries e programas de TV. <br>
-
-* [Instagram Fin4teen](https://www.instagram.com/fin4teenapp/)
-
 
 ## Diagramas
 
@@ -46,4 +45,11 @@ Necessário ter [Xcode](https://developer.apple.com/xcode/) instalado.
 <b>Firebase/Auth<br>
  
 Projeto gerado com Xcode version 13.4.
- 
+
+## Nossas Aplicações
+* [Fin4teen Web](https://leojportes.github.io/Fin4teenWeb/)
+* [Instagram Fin4teen](https://www.instagram.com/fin4teenapp/)
+
+## API/Banco de dados
+* [Repositório API](https://github.com/AlyssonAguiar/Fin4TeenAPI)
+
