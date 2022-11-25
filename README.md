@@ -10,7 +10,7 @@
  
  [Construção](#construção)
  
- [API & Banco de dados](#api-&-banco-de-dados)
+ [API](#API)
  
  [Diagramas](#diagramas)
  
@@ -50,6 +50,6 @@ Projeto gerado com Xcode version 13.4.
 * [Fin4teen Web](https://leojportes.github.io/Fin4teenWeb/)
 * [Instagram Fin4teen](https://www.instagram.com/fin4teenapp/)
 
-## API & Banco de dados
+## API
 * [Repositório API](https://github.com/AlyssonAguiar/Fin4TeenAPI)
 
