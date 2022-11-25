@@ -45,13 +45,13 @@ Necessário ter [Xcode](https://developer.apple.com/xcode/) instalado.
 <b>Firebase/Auth<br>
  
 Projeto gerado com Xcode version 13.4.
-
-## Nossas Aplicações
-* [Fin4teen Web](https://leojportes.github.io/Fin4teenWeb/)
-* [Instagram Fin4teen](https://www.instagram.com/fin4teenapp/)
-
+ 
 ## API
 * [Repositório API](https://github.com/AlyssonAguiar/Fin4TeenAPI)
 - Linguagem: C#
 - Plataforma: .net 6
 - Hospedagem: Azure
+
+## Nossas Aplicações
+* [Fin4teen Web](https://leojportes.github.io/Fin4teenWeb/)
+* [Instagram Fin4teen](https://www.instagram.com/fin4teenapp/)
