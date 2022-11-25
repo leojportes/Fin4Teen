@@ -23,7 +23,9 @@
  [:computer: Nossas Aplicações](#nossas-aplicações)
 
 ## Descrição do Projeto
-* <b>No aplicativo, há sessões de videoaulas, recomendações, que recomenda livros, filmes, séries e programas de TV. <br>
+* <b>No aplicativo há:
+- Sessões de videoaulas
+- Recomendações de livros, filmes, séries e programas de TV. <br>
 
 ## Diagramas
 
