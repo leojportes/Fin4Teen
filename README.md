@@ -48,7 +48,7 @@
 ## API
 * [Repositório API](https://github.com/AlyssonAguiar/Fin4TeenAPI)
 - Linguagem: C#
-- Plataforma: .net 6
+- Framework: .net 6
 - Hospedagem: Azure
 
 ## Nossas Aplicações
