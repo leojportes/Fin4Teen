@@ -12,6 +12,8 @@
  
  [Construção](#construção)
  
+ [Diagramas](#diagramas)
+ 
  [Possíveis Melhorias](#possíveis-melhorias)
  
  [Build](#build)
@@ -22,9 +24,12 @@
 <b>No aplicativo, há sessões de videoaulas, recomendações, que recomenda livros, filmes, séries e programas de TV. <br>
 
 * [Instagram Fin4teen](https://www.instagram.com/fin4teenapp/)
- 
 
-![AppFin4teen](https://github.com/leojportes/Fin4teen/blob/main/Corte.gif)
+
+## Diagramas
+
+- Diagrama de classe
+![Fin4teen-diagram](https://user-images.githubusercontent.com/65302846/204023430-ef13fb3f-97dd-488a-8689-fc426478854f.png)
 
 ## Construção
 Aplicação foi desenvolvida em [Swift](https://www.apple.com/br/swift/) por meio da IDE Xcode.
