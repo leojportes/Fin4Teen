@@ -52,4 +52,6 @@ Projeto gerado com Xcode version 13.4.
 
 ## API
 * [Repositório API](https://github.com/AlyssonAguiar/Fin4TeenAPI)
-
+- Linguagem: C#
+- Plataforma: .net 6
+- Hospedagem: Azure
