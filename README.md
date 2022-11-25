@@ -4,7 +4,7 @@
 
 # Fin4teen
 
-<b>Aplicativo de Educação Financeira com foco em jovens.<br>
+<b>Aplicativo de Educação Financeira para jovens.<br>
 
 ## Tópicos 
 
