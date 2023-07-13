@@ -20,8 +20,8 @@
 * <b>We provide:
 - List and details of characters.
 - List and details of locations.
-  
-![Home](https://github.com/leojportes/Fin4Teen/assets/65302846/e90c5374-da15-458a-ba16-d386d55c6c17)
+
+<img width="300" src="https://github.com/leojportes/Fin4Teen/assets/65302846/e90c5374-da15-458a-ba16-d386d55c6c17">
 
 | Character List | Character Detail |
 | ---- | ---- |
