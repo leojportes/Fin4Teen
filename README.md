@@ -2,56 +2,54 @@
 
 # Fin4teen
 
-* <b>Aplicativo de Educação Financeira para jovens.<br>
+* <b>Application that lists the characters of Rick and Morty<br>
 
 ## Tópicos 
 
- [:book: Descrição do projeto](#descrição-do-projeto)
+ [:book: Project description](#project-description)
  
- [:wrench: Construção](#construção)
+ [:wrench: Construction](#construction)
  
  [:cloud: API](#api)
  
- [:page_facing_up: Diagramas](#diagramas)
- 
- [:gem: Possíveis Melhorias](#possíveis-melhorias)
- 
- [:hammer: Build Xcode](#build-xcode)
- 
- [:open_file_folder: Dependências](#dependências)
+ [:gem: Improvements](#improvements)
 
- [:computer: Nossas Aplicações](#nossas-aplicações)
+ [:open_file_folder: Dependencies](#dependencies)
 
-## Descrição do Projeto
-* <b>No aplicativo há:
-- Sessões de videoaulas
-- Recomendações de livros, filmes, séries e programas de TV. <br>
+## Project description
+* <b>We provide:
+- List and details of characters.
+- List and details of locations.
+  
+![Home](https://github.com/leojportes/Fin4Teen/assets/65302846/e90c5374-da15-458a-ba16-d386d55c6c17)
 
-## Diagramas
+| Character List | Character Detail |
+| ---- | ---- |
+| ![CharacterList](https://github.com/leojportes/Fin4Teen/assets/65302846/c056ac21-dcfb-4f90-97bc-7c0f846cd556) | ![CharacterDetail](https://github.com/leojportes/Fin4Teen/assets/65302846/7ac2f347-9af7-481f-806c-3d15829db1f6) |
 
-- Diagrama de classe
-![Fin4teen-diagram](https://user-images.githubusercontent.com/65302846/204023430-ef13fb3f-97dd-488a-8689-fc426478854f.png)
+| Location List | Location Detail |
+| ---- | ---- |
+| ![LocationList](https://github.com/leojportes/Fin4Teen/assets/65302846/f7b2203e-8a49-4a3b-9564-096e98360ab7) | ![LocationDetail](https://github.com/leojportes/Fin4Teen/assets/65302846/5f5f526b-1793-4660-8a3d-1aa21d86097e) |
 
-## Construção
-* Aplicação foi desenvolvida em [Swift](https://www.apple.com/br/swift/) por meio da IDE Xcode.
 
-## Possíveis Melhorias
-* <b>Testes</b>: Aplicação de testes unitários.
-* <b>Parcerias</b>: Fechar parcerias para popular videoaulas.
+## Construction
+* The application was developed in [Kotlin](http://kotlinlang.org) using the Android studio IDE.
 
-## Build Xcode
-* Necessário ter [Xcode](https://developer.apple.com/xcode/) instalado.
-* Projeto gerado com Xcode version 13.4.
+## Improvements
+* <b>Tests</b>: Creation of unit tests.
+* <b>Pagination</b>: Pagination on character and location list.
 
-## Dependências
-* <b>Firebase/Auth<br> - Usado para autenticação de login.
+## Dependencies
+* Kodein
+* Jetpack compose
+*  Coroutines
+* Retrofit
+*  Okhttp3
+* Logginginterceptor
+*   Serialization
+* Coil
+*  Material 3
  
 ## API
-* [Repositório API](https://github.com/AlyssonAguiar/Fin4TeenAPI)
-- Linguagem: C#
-- Framework: .net 6
-- Hospedagem: Azure
+* [Rick and Morty API](http://rickandmortyapi.com)
 
-## Nossas Aplicações
-* [Fin4teen Web](https://leojportes.github.io/Fin4teenWeb/)
-* [Instagram Fin4teen](https://www.instagram.com/fin4teenapp/)
