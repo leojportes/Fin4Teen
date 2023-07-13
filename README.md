@@ -1,6 +1,6 @@
-![Badge](https://img.shields.io/badge/Swift-FA7343?style=for-the-badge&logo=swift&logoColor=white) ![Badge](https://img.shields.io/badge/iOS-000000?style=for-the-badge&logo=Apple&logoColor=white)
 
-# Fin4teen
+
+# Rick and Morty App
 
 * <b>Application that lists the characters of Rick and Morty<br>
 
